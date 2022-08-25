@@ -1,20 +1,22 @@
-#windowUtils.py
-#A part of NonVisual Desktop Access (NVDA)
-#Copyright (C) 2013 NV Access Limited
-#This file is covered by the GNU General Public License.
-#See the file COPYING for more details.
+# A part of NonVisual Desktop Access (NVDA)
+# Copyright (C) 2013-2022 NV Access Limited
+# This file is covered by the GNU General Public License.
+# See the file COPYING for more details.
 
 """Utilities for working with windows (HWNDs).
 """
 
 import ctypes
 import weakref
+
 import winUser
-from winUser import WNDCLASSEXW, WNDPROC, LRESULT
+from winUser import WNDCLASSEXW, WNDPROC
 from logHandler import log
 from abc import abstractmethod
 from baseObject import AutoPropertyObject
 from typing import Optional
+from winAPI.types import HWNDValT
+
 
 WNDENUMPROC = ctypes.WINFUNCTYPE(ctypes.wintypes.BOOL, ctypes.wintypes.HWND, ctypes.wintypes.LPARAM)
 def findDescendantWindow(parent, visible=None, controlID=None, className=None):
@@ -217,11 +219,16 @@ class CustomWindow(AutoPropertyObject):
 			appInstance,
 			None
 		)
+		self.windowName = windowName
 		if res == 0:
 			raise ctypes.WinError()
-		#: The handle to the created window.
-		self.handle: int = res
 		self._hwndsToInstances[res] = self
+
+	@property
+	def handle(self) -> HWNDValT:
+		res = winUser.FindWindow(self.className, self.windowName)
+		self._hwndsToInstances[res] = self
+		return res
 
 	def destroy(self):
 		"""Destroy the window.
@@ -230,7 +237,6 @@ class CustomWindow(AutoPropertyObject):
 		"""
 		if not ctypes.windll.user32.DestroyWindow(self.handle):
 			log.error(f"Error destroying window for {self.__class__.__qualname__}", exc_info=ctypes.WinError())
-		self.handle = None
 		if not ctypes.windll.user32.UnregisterClassW(self._classAtom, appInstance):
 			log.error(
 				f"Error unregistering window class for {self.__class__.__qualname__}",
@@ -239,7 +245,13 @@ class CustomWindow(AutoPropertyObject):
 		self._classAtom = None
 
 	def __del__(self):
-		if getattr(self, "handle", None):
+		try:
+			self.handle
+		except OSError:
+			# handle cannot be found
+			# window destroyed
+			pass
+		else:
 			self.destroy()
 
 	@abstractmethod

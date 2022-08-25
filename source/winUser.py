@@ -593,11 +593,13 @@ def getKeyNameText(scanCode,extended):
 	user32.GetKeyNameTextW((scanCode<<16)|(extended<<24),buf,31)
 	return buf.value
 
-def FindWindow(className, windowName):
+
+def FindWindow(className: str, windowName: str) -> int:
 	res = user32.FindWindowW(className, windowName)
 	if res == 0:
 		raise WinError()
 	return res
+
 
 MB_RETRYCANCEL=5
 MB_ICONERROR=0x10
