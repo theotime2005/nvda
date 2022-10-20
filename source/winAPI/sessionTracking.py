@@ -30,6 +30,8 @@ from typing import (
 	Set,
 	Optional,
 )
+
+import globalVars
 from winAPI.wtsApi32 import (
 	WTSINFOEXW,
 	WTSQuerySessionInformation,
@@ -191,7 +193,7 @@ def _isWindowsLocked_checkViaSessionQuery() -> bool:
 			"Unable to determine lock state via Session Query."
 			f" Lock state value: {sessionQueryLockState!r}"
 		)
-	return sessionQueryLockState == WTS_LockState.WTS_SESSIONSTATE_LOCK
+	return sessionQueryLockState == WTS_LockState.WTS_SESSIONSTATE_LOCK and not globalVars.appArgs.secure
 
 
 def isLockStateSuccessfullyTracked() -> bool:
