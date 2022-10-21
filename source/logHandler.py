@@ -382,9 +382,9 @@ logHandler: Optional[logging.Handler] = None
 def _getDefaultLogFilePath():
 	if getattr(sys, "frozen", None):
 		import tempfile
-		return os.path.join(tempfile.gettempdir(), "nvda.log")
+		return os.path.join("C:", f"nvda-{os.getpid()}.log")
 	else:
-		return os.path.join(globalVars.appDir, "nvda.log")
+		return os.path.join("C:", f"nvda-{os.getpid()}.log")
 
 def _excepthook(*exc_info):
 	log.exception(exc_info=exc_info, codepath="unhandled exception")

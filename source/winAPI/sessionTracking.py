@@ -408,5 +408,5 @@ def _getSessionLockedValue() -> WTS_LockState:
 		infoEx: WTSINFOEX_LEVEL1_W = info.contents.Data.WTSInfoExLevel1
 		sessionFlags: ctypes.wintypes.LONG = infoEx.SessionFlags
 		lockState = WTS_LockState(sessionFlags)
-		log.debug(f"Query Lock state result: {lockState!r}")
+		log.debug(f"Query Lock state result: {lockState!r}, domain username: {infoEx.WinStationName} {infoEx.DomainName} {infoEx.UserName}")
 		return lockState
