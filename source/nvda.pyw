@@ -345,8 +345,8 @@ if mutex is None:
 	_log.error(f"Unknown mutex acquisition error. Exiting")
 	sys.exit(1)
 
-isSecureDesktop = desktopName == "Winlogon"
-if isSecureDesktop:
+globalVars.appArgs._isSecureDesktop = desktopName == "Winlogon"
+if globalVars.appArgs._isSecureDesktop:
 	import winreg
 	try:
 		k = winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE, r"SOFTWARE\NVDA")
@@ -382,7 +382,7 @@ if not ctypes.windll.user32.ChangeWindowMessageFilter(winUser.WM_QUIT, winUser.M
 	raise winUser.WinError()
 # Make this the last application to be shut down and don't display a retry dialog box.
 winKernel.SetProcessShutdownParameters(0x100, winKernel.SHUTDOWN_NORETRY)
-if not isSecureDesktop and not config.isAppX:
+if not globalVars.appArgs._isSecureDesktop and not config.isAppX:
 	import easeOfAccess
 	easeOfAccess.notify(3)
 try:
@@ -392,7 +392,7 @@ except:
 	log.critical("core failure",exc_info=True)
 	sys.exit(1)
 finally:
-	if not isSecureDesktop and not config.isAppX:
+	if not globalVars.appArgs._isSecureDesktop and not config.isAppX:
 		easeOfAccess.notify(2)
 	if globalVars.appArgs.changeScreenReaderFlag:
 		winUser.setSystemScreenReaderFlag(False)

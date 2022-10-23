@@ -45,6 +45,7 @@ class DefaultAppArgs(argparse.Namespace):
 	enableStartOnLogon: typing.Optional[bool] = None
 	copyPortableConfig: bool = False
 	easeOfAccess: bool = False
+	_isSecureDesktop: bool = False
 
 
 startTime=0
