@@ -230,10 +230,6 @@ def register(handle: HWND) -> bool:
 
 	https://docs.microsoft.com/en-us/windows/win32/api/wtsapi32/nf-wtsapi32-wtsregistersessionnotification
 	"""
-	##
-	# Ensure that an initial state is set,
-	# do this first to prevent a race condition with session tracking / message processing.
-	_setInitialWindowLockState()
 
 	# OpenEvent handle must be closed with CloseHandle.
 	eventObjectHandle: HANDLE = ctypes.windll.kernel32.OpenEventW(
@@ -257,6 +253,10 @@ def register(handle: HWND) -> bool:
 
 	if registrationSuccess:
 		log.debug("Registered session tracking")
+		# Ensure that an initial state is set.
+		# Do this only when session tracking has been registered,
+		# so that any changes to the state are not missed via a race condition with session tracking registration.
+		_setInitialWindowLockState()
 	else:
 		error = ctypes.WinError()
 		if error.errno == RPC_S_INVALID_BINDING:
