@@ -144,7 +144,7 @@ def _isSecureObjectWhileLockScreenActivated(
 	if isWindowsLocked() and not isObjectAboveLockScreen(obj):
 		if shouldLog and log.isEnabledFor(log.DEBUG):
 			devInfo = '\n'.join(obj.devInfo)
-			log.debug(f"Attempt at navigating to a secure object: {devInfo}")
+			log.debug(f"Attempt at navigating to a secure object: {devInfo}", stack_info=True)
 		return True
 
 	return False
