@@ -156,6 +156,7 @@ def isObjectAboveLockScreen(obj: "NVDAObjects.NVDAObject") -> bool:
 	but other Windows can be focused (e.g. Windows Magnifier).
 	"""
 	import appModuleHandler
+	from appModules.logonui import Win8PasswordField, LogonDialog
 	from IAccessibleHandler import SecureDesktopNVDAObject
 	from NVDAObjects.IAccessible import TaskListIcon
 
@@ -174,6 +175,9 @@ def isObjectAboveLockScreen(obj: "NVDAObjects.NVDAObject") -> bool:
 		# Used to indicate to the user and to API consumers (including NVDA remote) via gainFocus,
 		# that the user has switched to a secure desktop.
 		or isinstance(obj, SecureDesktopNVDAObject)
+		# The Windows 7/8 logon UX is used when performing the "I forgot my PIN" workflow.
+		or isinstance(obj, Win8PasswordField)
+		or isinstance(obj, LogonDialog)
 	):
 		return True
 
