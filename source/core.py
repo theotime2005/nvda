@@ -451,7 +451,7 @@ def main():
 	which checks the queues and executes functions when requested.
 	Finally, it starts the wx main loop.
 	"""
-	log.debug("Core starting")
+	log.debug("Core starting")  # TODO: this is never logged until config is initialized
 
 	ctypes.windll.user32.SetProcessDPIAware()
 
@@ -464,6 +464,10 @@ def main():
 	log.debug("loading config")
 	import config
 	config.initialize()
+	from systemUtils import _getDesktopName
+	desktopName = _getDesktopName()
+	log.debug(f"Current Desktop Name: {desktopName}")
+
 	if config.conf['development']['enableScratchpadDir']:
 		log.info("Developer Scratchpad mode enabled")
 	if not globalVars.appArgs.minimal and config.conf["general"]["playStartAndExitSounds"]:
