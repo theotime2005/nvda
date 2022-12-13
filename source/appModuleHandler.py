@@ -710,6 +710,7 @@ class AppModule(baseObject.ScriptableObject):
 				ctypes.byref(processMachineInfo),
 				ctypes.sizeof(_PROCESS_MACHINE_INFORMATION)
 			):
+				log.debugWarning("Could not query process architecture")
 				self.appArchitecture = "unknown"
 			else:
 				self.appArchitecture = archValues2ArchNames.get(processMachineInfo.ProcessMachine, "unknown")
