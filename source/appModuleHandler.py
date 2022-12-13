@@ -713,7 +713,11 @@ class AppModule(baseObject.ScriptableObject):
 				log.debugWarning("Could not query process architecture")
 				self.appArchitecture = "unknown"
 			else:
-				self.appArchitecture = archValues2ArchNames.get(processMachineInfo.ProcessMachine, "unknown")
+				try:
+					self.appArchitecture = archValues2ArchNames[processMachineInfo.ProcessMachine]
+				except KeyError:
+					log.debugWarning(f"Unknown process architecture 0X{processMachineInfo.ProcessMachine:X}")
+					self.appArchitecture = "unknown"
 		else:
 			# IsWow64Process2 can be used on Windows 10 Version 1511 (build 10586) and later.
 			# Just assume this is an x64 (AMD64) app.
