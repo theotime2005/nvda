@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 # A part of NonVisual Desktop Access (NVDA)
-# Copyright (C) 2006-2022 NV Access Limited, Peter Vágner, Aleksey Sadovoy, Mesar Hameed, Joseph Lee,
-# Thomas Stivers, Babbage B.V., Accessolutions, Julien Cochuyt, Cyrille Bougot
+# Copyright (C) 2006-2023 NV Access Limited, Peter Vágner, Aleksey Sadovoy, Mesar Hameed, Joseph Lee,
+# Thomas Stivers, Babbage B.V., Accessolutions, Julien Cochuyt, Cyrille Bougot, Luke Davis
 # This file is covered by the GNU General Public License.
 # See the file COPYING for more details.
 
@@ -11,6 +11,7 @@ import threading
 import ctypes
 import wx
 import wx.adv
+
 import globalVars
 import tones
 import ui
@@ -21,6 +22,10 @@ import versionInfo
 import speech
 import queueHandler
 import core
+from typing import (
+	Optional,
+)
+import systemUtils
 from .message import (
 	# messageBox is accessed through `gui.messageBox` as opposed to `gui.message.messageBox` throughout NVDA,
 	# be cautious when removing
@@ -68,11 +73,14 @@ ICON_PATH=os.path.join(NVDA_PATH, "images", "nvda.ico")
 DONATE_URL = "http://www.nvaccess.org/donate/"
 
 ### Globals
-mainFrame = None
+mainFrame: Optional["MainFrame"] = None
+"""Set by initialize. Should be used as the parent for "top level" dialogs.
+"""
 
 
 class MainFrame(wx.Frame):
-
+	"""A hidden window, intended to act as the parent to all dialogs.
+	"""
 	def __init__(self):
 		style = wx.DEFAULT_FRAME_STYLE ^ wx.MAXIMIZE_BOX ^ wx.MINIMIZE_BOX | wx.FRAME_NO_TASKBAR
 		super(MainFrame, self).__init__(None, wx.ID_ANY, versionInfo.name, size=(1,1), style=style)
@@ -87,7 +95,6 @@ class MainFrame(wx.Frame):
 		#: @type: list of L{NVDAObject}
 		self.prevFocusAncestors = None
 		# If NVDA has the uiAccess privilege, it can always set the foreground window.
-		import systemUtils
 		if not systemUtils.hasUiAccess():
 			# This makes Windows return to the previous foreground window and also seems to allow NVDA to be brought to the foreground.
 			self.Show()
@@ -136,7 +143,6 @@ class MainFrame(wx.Frame):
 		# Therefore, move the mouse to the center of the screen so that the menu will always pop up there.
 		location = api.getDesktopObject().location
 		winUser.setCursorPos(*location.center)
-		self.evaluateUpdatePendingUpdateMenuItemCommand()
 		self.sysTrayIcon.onActivate(None)
 
 	def onRevertToSavedConfigurationCommand(self,evt):
@@ -149,13 +155,16 @@ class MainFrame(wx.Frame):
 		# Translators: Reported when configuration has been restored to defaults by using restore configuration to factory defaults item in NVDA menu.
 		queueHandler.queueFunction(queueHandler.eventQueue,ui.message,_("Configuration restored to factory defaults"))
 
-	@blockAction.when(blockAction.Context.SECURE_MODE)
+	@blockAction.when(
+		blockAction.Context.SECURE_MODE,
+		blockAction.Context.RUNNING_LAUNCHER,
+	)
 	def onSaveConfigurationCommand(self,evt):
 		try:
 			config.conf.save()
 			# Translators: Reported when current configuration has been saved.
 			queueHandler.queueFunction(queueHandler.eventQueue,ui.message,_("Configuration saved"))
-		except:
+		except PermissionError:
 			# Translators: Message shown when current configuration cannot be saved such as when running NVDA from a CD.
 			messageBox(_("Could not save configuration - probably read only file system"),_("Error"),wx.OK | wx.ICON_ERROR)
 
@@ -203,14 +212,13 @@ class MainFrame(wx.Frame):
 				updateCheck.executePendingUpdate()
 
 	def evaluateUpdatePendingUpdateMenuItemCommand(self):
-		try:
-			self.sysTrayIcon.menu.Remove(self.sysTrayIcon.installPendingUpdateMenuItem)
-		except:
-			log.debug("Error while removing  pending update menu item", exc_info=True)
-			pass
-		if not globalVars.appArgs.secure and updateCheck and updateCheck.isPendingUpdate():
-			self.sysTrayIcon.menu.Insert(self.sysTrayIcon.installPendingUpdateMenuItemPos,self.sysTrayIcon.installPendingUpdateMenuItem)
-
+		log.warning(
+			"MainFrame.evaluateUpdatePendingUpdateMenuItemCommand is deprecated. "
+			"Use SysTrayIcon.evaluateUpdatePendingUpdateMenuItemCommand instead.",
+			stack_info=True,
+		)
+		self.sysTrayIcon.evaluateUpdatePendingUpdateMenuItemCommand()
+	
 	@blockAction.when(blockAction.Context.MODAL_DIALOG_OPEN)
 	def onExitCommand(self, evt):
 		if config.conf["general"]["askToExit"]:
@@ -317,15 +325,31 @@ class MainFrame(wx.Frame):
 			pythonConsole.initialize()
 		pythonConsole.activate()
 
+	if NVDAState._allowDeprecatedAPI():
+		def onAddonsManagerCommand(self, evt: wx.MenuEvent):
+			log.warning("onAddonsManagerCommand is deprecated, use onAddonStoreCommand instead.")
+			self.onAddonStoreCommand(evt)
+
 	@blockAction.when(
 		blockAction.Context.SECURE_MODE,
 		blockAction.Context.MODAL_DIALOG_OPEN,
+		blockAction.Context.WINDOWS_LOCKED,
+		blockAction.Context.WINDOWS_STORE_VERSION,
+		blockAction.Context.RUNNING_LAUNCHER,
 	)
-	def onAddonsManagerCommand(self,evt):
+	def onAddonStoreCommand(self, evt: wx.MenuEvent):
 		self.prePopup()
-		from .addonGui import AddonsDialog
-		d=AddonsDialog(gui.mainFrame)
-		d.Show()
+		from ._addonStoreGui import AddonStoreDialog
+		from ._addonStoreGui.viewModels.store import AddonStoreVM
+		_storeVM = AddonStoreVM()
+		try:
+			d = AddonStoreDialog(mainFrame, _storeVM)
+		except SettingsDialog.MultiInstanceErrorWithDialog as errorWithDialog:
+			errorWithDialog.dialog.SetFocus()
+		else:
+			_storeVM.refresh()
+			d.Maximize()
+			d.Show()
 		self.postPopup()
 
 	def onReloadPluginsCommand(self, evt):
@@ -373,7 +397,6 @@ class MainFrame(wx.Frame):
 			_("Please wait while NVDA tries to fix your system's COM registrations.")
 		)
 		try:
-			import systemUtils
 			systemUtils.execElevated(config.SLAVE_FILENAME, ["fixCOMRegistrations"])
 		except:
 			log.error("Could not execute fixCOMRegistrations command",exc_info=True) 
@@ -446,13 +469,16 @@ class SysTrayIcon(wx.adv.TaskBarIcon):
 		self.menu_tools_toggleBrailleViewer.Check(brailleViewer.isBrailleViewerActive())
 		brailleViewer.postBrailleViewerToolToggledAction.register(frame.onBrailleViewerChangedState)
 
+		if not config.isAppX and NVDAState.shouldWriteToDisk():
+			# Translators: The label of a menu item to open the Add-on store
+			item = menu_tools.Append(wx.ID_ANY, _("Add-on &store..."))
+			self.Bind(wx.EVT_MENU, frame.onAddonStoreCommand, item)
+
 		if not globalVars.appArgs.secure and not config.isAppX:
 			# Translators: The label for the menu item to open NVDA Python Console.
 			item = menu_tools.Append(wx.ID_ANY, _("Python console"))
 			self.Bind(wx.EVT_MENU, frame.onPythonConsoleCommand, item)
-			# Translators: The label of a menu item to open the Add-ons Manager.
-			item = menu_tools.Append(wx.ID_ANY, _("Manage &add-ons..."))
-			self.Bind(wx.EVT_MENU, frame.onAddonsManagerCommand, item)
+
 		if not globalVars.appArgs.secure and not config.isAppX and not NVDAState.isRunningAsSource():
 			# Translators: The label for the menu item to create a portable copy of NVDA from an installed or another portable version.
 			item = menu_tools.Append(wx.ID_ANY, _("Create portable copy..."))
@@ -486,10 +512,18 @@ class SysTrayIcon(wx.adv.TaskBarIcon):
 			self.Bind(wx.EVT_MENU, lambda evt: os.startfile("http://www.nvda-project.org/"), item)
 			# Translators: The label for the menu item to view NVDA License document.
 			item = menu_help.Append(wx.ID_ANY, _("L&icense"))
-			self.Bind(wx.EVT_MENU, lambda evt: os.startfile(getDocFilePath("copying.txt", False)), item)
+			self.Bind(
+				wx.EVT_MENU,
+				lambda evt: systemUtils._displayTextFileWorkaround(getDocFilePath("copying.txt", False)),
+				item
+			)
 			# Translators: The label for the menu item to view NVDA Contributors list document.
 			item = menu_help.Append(wx.ID_ANY, _("C&ontributors"))
-			self.Bind(wx.EVT_MENU, lambda evt: os.startfile(getDocFilePath("contributors.txt", False)), item)
+			self.Bind(
+				wx.EVT_MENU,
+				lambda evt: systemUtils._displayTextFileWorkaround(getDocFilePath("contributors.txt", False)),
+				item
+			)
 			# Translators: The label for the menu item to open NVDA Welcome Dialog.
 			item = menu_help.Append(wx.ID_ANY, _("We&lcome dialog..."))
 			self.Bind(wx.EVT_MENU, lambda evt: WelcomeDialog.run(), item)
@@ -524,8 +558,17 @@ class SysTrayIcon(wx.adv.TaskBarIcon):
 
 		self.Bind(wx.adv.EVT_TASKBAR_LEFT_DOWN, self.onActivate)
 		self.Bind(wx.adv.EVT_TASKBAR_RIGHT_DOWN, self.onActivate)
-
+	
+	def evaluateUpdatePendingUpdateMenuItemCommand(self):
+		try:
+			self.menu.Remove(self.installPendingUpdateMenuItem)
+		except Exception:
+			log.debug("Error while removing pending update menu item", exc_info=True)
+		if not globalVars.appArgs.secure and updateCheck and updateCheck.isPendingUpdate():
+			self.menu.Insert(self.installPendingUpdateMenuItemPos, self.installPendingUpdateMenuItem)
+	
 	def onActivate(self, evt):
+		self.evaluateUpdatePendingUpdateMenuItemCommand()
 		mainFrame.prePopup()
 		import appModules.nvda
 		if not appModules.nvda.nvdaMenuIaIdentity:
@@ -593,7 +636,7 @@ class SysTrayIcon(wx.adv.TaskBarIcon):
 			_("Reset all settings to default state")
 		)
 		self.Bind(wx.EVT_MENU, frame.onRevertToDefaultConfigurationCommand, item)
-		if not globalVars.appArgs.secure:
+		if NVDAState.shouldWriteToDisk():
 			item = self.menu.Append(
 				wx.ID_SAVE,
 				# Translators: The label for the menu item to save current settings.

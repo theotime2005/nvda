@@ -76,7 +76,7 @@ def quits_from_menu(showExitDialog=True):
 			actualSpeech,
 			"\n".join([
 				"Exit NVDA  dialog",
-				"What would you like to do?  combo box  Exit  collapsed  Alt plus d"
+				"What would you like to do?  combo box  Exit  collapsed  Alt plus  d"
 			])
 		)
 		_builtIn.sleep(1)  # the dialog is not always receiving the enter keypress, wait a little for it
@@ -105,7 +105,7 @@ def quits_from_keyboard():
 		actualSpeech,
 		"\n".join([
 			"Exit NVDA  dialog",
-			"What would you like to do?  combo box  Exit  collapsed  Alt plus d"
+			"What would you like to do?  combo box  Exit  collapsed  Alt plus  d"
 		])
 	)
 	_builtIn.sleep(1)  # the dialog is not always receiving the enter keypress, wait a little longer for it
@@ -143,7 +143,7 @@ def read_welcome_dialog():
 				"NVDA, get help and access other NVDA functions."
 			),
 			"Options  grouping",
-			"Keyboard layout:  combo box  desktop  collapsed  Alt plus k"
+			"Keyboard layout:  combo box  desktop  collapsed  Alt plus  k"
 		])
 	)
 	_builtIn.sleep(1)  # the dialog is not always receiving the enter keypress, wait a little longer for it
@@ -224,10 +224,10 @@ def NVDA_restarts_on_crash():
 	_ensureRestartWithCrashDump(spy.queueNVDAMainThreadCrash)
 
 
-def NVDA_restarts_on_braille_crash():
-	"""Ensure NVDA restarts on crash."""
+def NVDA_restarts_on_io_thread_crash():
+	"""Ensure NVDA restarts on a crash in the hwIo background thread."""
 	spy = _nvdaLib.getSpyLib()
-	_ensureRestartWithCrashDump(spy.queueNVDABrailleThreadCrash)
+	_ensureRestartWithCrashDump(spy.queueNVDAIoThreadCrash)
 
 
 def NVDA_restarts_on_UIAHandler_crash():

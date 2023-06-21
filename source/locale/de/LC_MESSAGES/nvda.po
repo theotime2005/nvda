@@ -2,16 +2,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-21 00:02+0000\n"
+"POT-Creation-Date: 2023-05-05 00:01+0000\n"
 "PO-Revision-Date: \n"
-"Last-Translator: Bernd Dorer <mail@bdorer.de>\n"
+"Last-Translator: Karl Eick <hozosch@web.de>\n"
 "Language-Team: \n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #. Translators: A mode  that allows typing in the actual 'native' characters for an east-Asian input method language currently selected, rather than alpha numeric (Roman/English) characters.
 msgid "Native input"
@@ -132,7 +132,7 @@ msgstr "Niemals"
 #. Translators: An audio ducking mode which specifies how NVDA affects the volume of other applications.
 #. See the Audio Ducking Mode section of the User Guide for details.
 msgid "Duck when outputting speech and sounds"
-msgstr "Während des Sprechens und bei Wiedergabe der Signaltöne"
+msgstr "Nur beim Vorlesen und bei Sounds"
 
 #. Translators: An audio ducking mode which specifies how NVDA affects the volume of other applications.
 #. See the Audio Ducking Mode section of the User Guide for details.
@@ -367,7 +367,7 @@ msgstr "art"
 
 #. Translators: Displayed in braille for an object which is a region.
 msgid "rgn"
-msgstr "Rgn"
+msgstr "rgn"
 
 #. Translators: Displayed in braille for an object which is a figure.
 msgid "fig"
@@ -391,6 +391,10 @@ msgstr "vrschlg"
 #. Translators: Identifies a definition.
 msgid "definition"
 msgstr "Definition"
+
+#. Translators: Displayed in braille when an object is a switch control
+msgid "swtch"
+msgstr "sltr"
 
 #. Translators: Displayed in braille when an object is selected.
 msgid "sel"
@@ -506,13 +510,13 @@ msgstr "Alle Punkte"
 #. Translators: The label for a braille focus context presentation setting that
 #. only shows as much as possible focus context information when the context has changed.
 msgid "Fill display for context changes"
-msgstr "Bei Kontextänderungen komplette Brailleanzeige füllen"
+msgstr "Bei Kontextänderungen komplette Braille-Anzeige füllen"
 
 #. Translators: The label for a braille focus context presentation setting that
 #. shows as much as possible focus context information if the focus object doesn't fill up the whole display.
 #. This was the pre NVDA 2017.3 default.
 msgid "Always fill display"
-msgstr "Immer füllen"
+msgstr "Immer Braille-Anzeige füllen"
 
 #. Translators: The label for a braille focus context presentation setting that
 #. always shows the object with focus at the very left of the braille display
@@ -532,6 +536,18 @@ msgstr "USB"
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
+#. Translators: Braille when there are further details/annotations that can be fetched manually.
+msgid "details"
+msgstr "Details"
+
+#. Translators: Braille when there are further details/annotations that can be fetched manually.
+#. %s specifies the type of details (e.g. "has comment suggestion")
+#. Translators: Speaks when there are further details/annotations that can be fetched manually.
+#. %s specifies the type of details (e.g. "comment, suggestion, details")
+#, python-format
+msgid "has %s"
+msgstr "enthält  %s"
+
 #. Translators: Displayed in braille for a heading with a level.
 #. %s is replaced with the level.
 #, python-format
@@ -541,18 +557,6 @@ msgstr "ü%s"
 #. Translators: Displayed in braille for a link which has been visited.
 msgid "vlnk"
 msgstr "bl"
-
-#. Translators: Braille when there are further details/annotations that can be fetched manually.
-#. %s specifies the type of details (e.g. comment, suggestion)
-#. Translators: Speaks when there are further details/annotations that can be fetched manually.
-#. %s specifies the type of details (e.g. comment, suggestion)
-#, python-format
-msgid "has %s"
-msgstr "enthält  %s"
-
-#. Translators: Braille when there are further details/annotations that can be fetched manually.
-msgid "details"
-msgstr "Details"
 
 #. Translators: Brailled to indicate the position of an item in a group of items (such as a list).
 #. {number} is replaced with the number of the item in the group.
@@ -611,19 +615,6 @@ msgstr "kmntb"
 #. Translators: brailled when text contains a bookmark
 msgid "bkmk"
 msgstr "lz"
-
-#. Translators: The label for a braille setting indicating that braille should be
-#. tethered to focus or review cursor automatically.
-msgid "automatically"
-msgstr "Automatisch"
-
-#. Translators: The label for a braille setting indicating that braille should be tethered to focus.
-msgid "to focus"
-msgstr "An Fokus"
-
-#. Translators: The label for a braille setting indicating that braille should be tethered to the review cursor.
-msgid "to review"
-msgstr "An NVDA-Cursor"
 
 #. Translators: Label for a setting in braille settings dialog.
 msgid "Dot firm&ness"
@@ -791,8 +782,18 @@ msgstr "Dänische Computer-Braille-Schrift, 8-Punkt"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
+msgid "Danish 8 dot computer braille (1993)"
+msgstr "Dänische Computer-Braille-Schrift, 8-Punkt (1993)"
+
+#. Translators: The name of a braille table displayed in the
+#. braille settings dialog.
 msgid "Danish 6 dot grade 1"
 msgstr "Dänische Vollschrift, 6-Punkt"
+
+#. Translators: The name of a braille table displayed in the
+#. braille settings dialog.
+msgid "Danish 6 dot grade 1 (1993)"
+msgstr "Dänische Vollschrift, 6-Punkt (1993)"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
@@ -801,13 +802,28 @@ msgstr "Dänische Vollschrift, 8-Punkt"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
+msgid "Danish 8 dot grade 1 (1993)"
+msgstr "Dänische Vollschrift, 8-Punkt (1993)"
+
+#. Translators: The name of a braille table displayed in the
+#. braille settings dialog.
 msgid "Danish 6 dot grade 2"
 msgstr "Dänische Kurzschrift, 6-Punkt"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
+msgid "Danish 6 dot grade 2 (1993)"
+msgstr "Dänische Kurzschrift, 6-Punkt (1993)"
+
+#. Translators: The name of a braille table displayed in the
+#. braille settings dialog.
 msgid "Danish 8 dot grade 2"
 msgstr "Dänische Kurzschrift, 8-Punkt"
+
+#. Translators: The name of a braille table displayed in the
+#. braille settings dialog.
+msgid "Danish 8 dot grade 2 (1993)"
+msgstr "Dänische Kurzschrift, 8-Punkt (1993)"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
@@ -1056,6 +1072,11 @@ msgstr "Indische Vollschrift (Kannada)"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
+msgid "Georgian literary braille"
+msgstr "Georgisch Literatur-Braille-Schrift"
+
+#. Translators: The name of a braille table displayed in the
+#. braille settings dialog.
 msgid "Kazakh grade 1"
 msgstr "Kasachische Vollschrift"
 
@@ -1206,6 +1227,11 @@ msgstr "Kurzschrift (Sepedi)"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
+msgid "Chichewa (Malawi) literary braille"
+msgstr "Literatur-Braille-Schrift (Chichewa, Malawi)"
+
+#. Translators: The name of a braille table displayed in the
+#. braille settings dialog.
 msgid "Oriya grade 1"
 msgstr "Indische Vollschrift (Oriya)"
 
@@ -1328,6 +1354,36 @@ msgstr "Schwedische Vollschrift"
 #. braille settings dialog.
 msgid "Swedish contracted braille"
 msgstr "Schwedische Kurzschrift"
+
+#. Translators: The name of a braille table displayed in the
+#. braille settings dialog.
+msgid "Swahili (Kenya) grade 1"
+msgstr "Vollschrift (Suaheli, Kenia)"
+
+#. Translators: The name of a braille table displayed in the
+#. braille settings dialog.
+msgid "Swahili (Kenya) grade 1.2"
+msgstr "Vollschrift 2 (Suaheli, Kenia)"
+
+#. Translators: The name of a braille table displayed in the
+#. braille settings dialog.
+msgid "Swahili (Kenya) grade 1.3"
+msgstr "Vollschrift 3 (Suaheli, Kenia)"
+
+#. Translators: The name of a braille table displayed in the
+#. braille settings dialog.
+msgid "Swahili (Kenya) grade 1.4"
+msgstr "Vollschrift 4 (Suaheli, Kenia)"
+
+#. Translators: The name of a braille table displayed in the
+#. braille settings dialog.
+msgid "Swahili (Kenya) grade 1.5"
+msgstr "Vollschrift 5 (Suaheli, Kenia)"
+
+#. Translators: The name of a braille table displayed in the
+#. braille settings dialog.
+msgid "Swahili (Kenya) Grade 2"
+msgstr "Kurzschrift (Suaheli, Kenia)"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
@@ -1801,7 +1857,7 @@ msgstr "Springt zur nächsten Trennlinie"
 
 #. Translators: Message presented when the browse mode element is not found.
 msgid "no next separator"
-msgstr "Keine vorherige Trennlinie"
+msgstr "Keine weitere Trennlinie"
 
 #. Translators: Input help message for a quick navigation command in browse mode.
 msgid "moves to the previous separator"
@@ -1841,7 +1897,7 @@ msgstr "Springt zum vorherigen Kombinationsfeld"
 
 #. Translators: Message presented when the browse mode element is not found.
 msgid "no previous combo box"
-msgstr "Kein weiteres Kombinationsfeld"
+msgstr "Kein vorheriges Kombinationsfeld"
 
 #. Translators: Input help message for a quick navigation command in browse mode.
 msgid "moves to the next check box"
@@ -1857,7 +1913,7 @@ msgstr "Springt zum vorherigen Kontrollfeld"
 
 #. Translators: Message presented when the browse mode element is not found.
 msgid "no previous check box"
-msgstr "Kein weiteres Kontrollfeld"
+msgstr "Kein vorheriges Kontrollfeld"
 
 #. Translators: Input help message for a quick navigation command in browse mode.
 msgid "moves to the next graphic"
@@ -1953,7 +2009,7 @@ msgstr "Springt zur vorherigen Anmerkung"
 
 #. Translators: Message presented when the browse mode element is not found.
 msgid "no previous annotation"
-msgstr "Keine weitere Anmerkung"
+msgstr "Keine vorherige Anmerkung"
 
 #. Translators: Input help message for a quick navigation command in browse mode.
 msgid "moves to the next error"
@@ -2924,20 +2980,10 @@ msgid "Cycles through line indentation settings"
 msgstr "Wechselt durch die Einstellungen für die Zeileneinrückungen"
 
 #. Translators: A message reported when cycling through line indentation settings.
-msgid "Report line indentation with speech"
-msgstr "Zeileneinrückungen ansagen"
-
-#. Translators: A message reported when cycling through line indentation settings.
-msgid "Report line indentation with tones"
-msgstr "Zeileneinrückung über Signaltöne"
-
-#. Translators: A message reported when cycling through line indentation settings.
-msgid "Report line indentation with speech and tones"
-msgstr "Zeileneinrückungen über Sprachausgabe und Signaltöne"
-
-#. Translators: A message reported when cycling through line indentation settings.
-msgid "Report line indentation off"
-msgstr "Zeileneinrückungen ausgeschaltet"
+#. {mode} will be replaced with the mode; i.e. Off, Speech, Tones or Both Speech and Tones.
+#, python-brace-format
+msgid "Report line indentation {mode}"
+msgstr "Zeileneinrückungen mitteilen: {mode}"
 
 #. Translators: Input help mode message for toggle report paragraph indentation command.
 msgid "Toggles on and off the reporting of paragraph indentation"
@@ -3003,17 +3049,11 @@ msgstr "Zellkoordinaten in Tabellen ansagen eingeschaltet"
 msgid "Cycles through the cell border reporting settings"
 msgstr "Wechselt die Amsage für die Einstellung der Zellenrahmen"
 
-#. Translators: A message reported when cycling through cell borders settings.
-msgid "Report styles of cell borders"
-msgstr "Stile von Zellrändern ansagen"
-
-#. Translators: A message reported when cycling through cell borders settings.
-msgid "Report colors and styles of cell borders"
-msgstr "Farben und Stile von Zellrahmen ansagen"
-
-#. Translators: A message reported when cycling through cell borders settings.
-msgid "Report cell borders off."
-msgstr "Zellenränder ansagen ausschalten."
+#. Translators: Reported when the user cycles through report cell border modes.
+#. {mode} will be replaced with the mode; e.g. Off, Styles and Colors and styles.
+#, python-brace-format
+msgid "Report cell borders {mode}"
+msgstr "Begrenzung für Zellrahmen mitteilen: {mode}"
 
 #. Translators: Input help mode message for toggle report links command.
 msgid "Toggles on and off the reporting of links"
@@ -3180,6 +3220,23 @@ msgstr ""
 #, python-format
 msgid "Symbol level %s"
 msgstr "Ausführlichkeitsstufe: %s"
+
+#. Translators: Input help mode message for toggle delayed character description command.
+msgid ""
+"Toggles on and off delayed descriptions for characters on cursor movement"
+msgstr ""
+"Schaltet die verzögerte Zeichen-Beschreibungen bei Cursor-Bewegung ein und "
+"aus"
+
+#. Translators: The message announced when toggling the delayed character description setting.
+msgid "delayed character descriptions on"
+msgstr ""
+"verzögerte Zeichen-Beschreibungen ausgeschaltetZeichen während der Eingabe "
+"ansagen eingeschaltet"
+
+#. Translators: The message announced when toggling the delayed character description setting.
+msgid "delayed character descriptions off"
+msgstr "verzögerte Zeichen-Beschreibungen ausgeschaltet"
 
 #. Translators: Input help mode message for move mouse to navigator object command.
 msgid "Moves the mouse pointer to the current navigator object"
@@ -3364,7 +3421,7 @@ msgstr "Zieht das Navigator-Objekt zum vorherigen Objekt"
 #. Translators: Reported when there is no previous object (current object is the first object).
 #. Translators: a message when there is no previous object when navigating
 msgid "No previous"
-msgstr "Kein weiteres Objekt"
+msgstr "Kein vorheriges Objekt"
 
 #. Translators: Input help mode message for move to first child object command.
 msgid "Moves the navigator object to the first object inside it"
@@ -4378,6 +4435,38 @@ msgstr ""
 msgid "Plugins reloaded"
 msgstr "Module wurden neu geladen"
 
+#. Translators: input help mode message for Report destination URL of a link command
+msgid ""
+"Report the destination URL of the link at the position of caret or focus. If "
+"pressed twice, shows the URL in a window for easier review."
+msgstr ""
+"Teilt das Ziel der Link-Adresse im Navigator-Objekt mit. Bei zweimaligem "
+"Drücken wird die Adresse zur leichteren Überprüfung in einem Fenster "
+"angezeigt."
+
+#. Translators: Informs the user that the link has no destination
+msgid "Link has no apparent destination"
+msgstr "Kein erkennbares Ziel in der Link-Adresse gefunden"
+
+#. Translators: Informs the user that the window contains the destination of the
+#. link with given title
+#, python-brace-format
+msgid "Destination of: {name}"
+msgstr "Ziel von: {name}"
+
+#. Translators: Tell user that the command has been run on something that is not a link
+msgid "Not a link."
+msgstr "Kein Link."
+
+#. Translators: input help mode message for Report URL of a link in a window command
+msgid ""
+"Displays the destination URL of the link at the position of caret or focus "
+"in a window, instead of just speaking it. May be preferred by braille users."
+msgstr ""
+"Zeigt das Ziel der Link-Adresse an der Position des Cursors oder des Fokus "
+"in einem Fenster an, anstatt sie nur mitzuteilen. Kann von Braille-Nutzern "
+"bevorzugt werden."
+
 #. Translators: Input help mode message for a touchscreen gesture.
 msgid ""
 "Moves to the next object in a flattened view of the object navigation "
@@ -4491,6 +4580,10 @@ msgstr ""
 "Bitte deaktivieren Sie den Bildschirmvorhang, bevor Sie die Windows-"
 "Texterkennung verwenden."
 
+#. Translators: Describes a command.
+msgid "Cycles through the available languages for Windows OCR"
+msgstr "Wechselt durch die verfügbaren Sprachen für die Windows-Texterkennung"
+
 #. Translators: Input help mode message for toggle report CLDR command.
 msgid "Toggles on and off the reporting of CLDR characters, such as emojis"
 msgstr ""
@@ -4541,6 +4634,10 @@ msgstr ""
 #. Translators: Reported when the screen curtain could not be enabled.
 msgid "Could not enable screen curtain"
 msgstr "Der Bildschirmvorhang konnte nicht aktiviert werden"
+
+#. Translators: Describes a command.
+msgid "Cycles through paragraph navigation styles"
+msgstr "Wechselt durch die Absatz-Navigations-Eigenschaften"
 
 #. Translators: a message indicating that configuration profiles can't be activated using gestures,
 #. due to profile activation being suspended.
@@ -4947,14 +5044,17 @@ msgstr "Laptop"
 msgid "unknown %s"
 msgstr "%s ist unbekannt"
 
+#. Translators: a state that denotes a control is currently on
+#. E.g. a switch control.
 msgid "on"
-msgstr "Eingeschaltet"
+msgstr "eingeschaltet"
 
+#. Translators: This is presented when a switch control is off.
 #. Translators: An option for progress bar output in the Object Presentation dialog
 #. which disables reporting of progress bars.
 #. See Progress bar output in the Object Presentation Settings section of the User Guide.
 msgid "off"
-msgstr "Ausgeschaltet"
+msgstr "ausgeschaltet"
 
 #. Translators: Used when describing keys on the system keyboard with a particular layout.
 #. %s is replaced with the layout name.
@@ -6278,6 +6378,35 @@ msgctxt "touch action"
 msgid "hover up"
 msgstr "Nach oben wischen"
 
+#. Translators: This is the message for a warning shown if NVDA cannot open a browsable message window
+#. when Windows is on a secure screen (sign-on screen / UAC prompt).
+msgid ""
+"This feature is unavailable while on secure screens such as the sign-on "
+"screen or UAC prompt."
+msgstr ""
+"Diese Funktion steht in geschützten Bildschirmen wie dem Anmeldebildschirm "
+"oder der Eingabeaufforderung von der Benutzerkontensteuerung nicht zur "
+"Verfügung."
+
+#. Translators: This is the message for a warning shown if NVDA cannot open a browsable message window
+#. when Windows is on a secure screen (sign-on screen / UAC prompt). This prompt includes the title
+#. of the Window that could not be opened for context.
+#. The {title} will be replaced with the title.
+#. The title may be something like "Formatting".
+#, python-brace-format
+msgid ""
+"This feature ({title}) is unavailable while on secure screens such as the "
+"sign-on screen or UAC prompt."
+msgstr ""
+"Diese Funktion ({title}) steht in geschützten Bildschirmen, wie dem "
+"Anmeldebildschirm oder der Eingabeaufforderung von der "
+"Benutzerkontensteuerung, nicht zur Verfügung."
+
+#. Translators: This is the title for a warning dialog, shown if NVDA cannot open a browsable message
+#. dialog.
+msgid "Feature unavailable."
+msgstr "Die Funktion steht nicht zur Verfügung."
+
 #. Translators: The title for the dialog used to present general NVDA messages in browse mode.
 msgid "NVDA Message"
 msgstr "NVDA-Meldung"
@@ -6319,13 +6448,15 @@ msgstr "Fehler bei der Suche nach Updates."
 #. Translators: The title of an error message dialog.
 #. Translators: An title for an error displayed when saving user defined input gestures fails.
 #. Translators: The title of a dialog presented when an error occurs.
-#. Translators: The message title displayed
-#. when the user has not specified an absolute destination directory
-#. in the Create Portable NVDA dialog.
+#. Translators: the title of an error dialog.
+#. Translators: The message title displayed when the user has not specified an absolute
+#. destination directory in the Create Portable NVDA dialog.
+#. Translators: Title of an error dialog shown when an error occurs while creating a portable copy of NVDA.
 #. Translators: The title of an error message dialog.
 #. Translators: The title of the message box
 #. Translators: The title of the error dialog displayed when there is an error showing the GUI
 #. for a vision enhancement provider
+#. Translators: The title of an error message box displayed when validating the startup dialog
 msgid "Error"
 msgstr "Fehler"
 
@@ -6505,7 +6636,7 @@ msgstr "Ein kostenloser und quelloffener Screenreader für Microsoft Windows"
 
 #, python-brace-format
 msgid "Copyright (C) {years} NVDA Contributors"
-msgstr "Copyright (C) {years} NVDA-Mitwirkende"
+msgstr "© {years} NVDA-Mitwirkende"
 
 #. Translators: "About NVDA" dialog box message
 #, python-brace-format
@@ -6584,10 +6715,15 @@ msgstr ""
 msgid "%d percent"
 msgstr "%d Prozent"
 
+#. Translators: Announced in braille when suggestions appear when search term is entered
+#. in various search fields such as Start search box in Windows 10.
+msgid "Suggestions"
+msgstr "Vorschläge"
+
 #. Translators: a message announcing a candidate's character and description.
 #, python-brace-format
 msgid "{symbol} as in {description}"
-msgstr "{symbol} wie {description}"
+msgstr "{symbol} wie in {description}"
 
 #. Translators: a formatted message announcing a candidate's number and candidate text.
 #, python-brace-format
@@ -6625,10 +6761,6 @@ msgstr "Zieht das Navigationsobjekt und den Fokus in die erste Zeile"
 #. Translators: The description of an NVDA command.
 msgid "Moves the navigator object and focus to the last row"
 msgstr "Zieht das Navigationsobjekt und den Fokus in die letzte Zeile"
-
-#. Translators: Announced in braille when suggestions appear when search term is entered in various search fields such as Start search box in Windows 10.
-msgid "Suggestions"
-msgstr "Vorschläge"
 
 #. Translators: The label for a 'composition' Window that appears when the user is typing one or more east-Asian characters into a document.
 msgid "Composition"
@@ -6701,18 +6833,37 @@ msgstr "Das Fenster für die Dokumentation konnte nicht gefunden werden."
 msgid "No track playing"
 msgstr "Kein Titel wird gerade wiedergegeben"
 
+#. Translators: Reported remaining time in Foobar2000
+#, python-brace-format
+msgid "{remainingTimeFormatted} remaining"
+msgstr "{remainingTimeFormatted} verbleiben"
+
 #. Translators: Reported if the remaining time can not be calculated in Foobar2000
-msgid "Unable to determine remaining time"
-msgstr "Restzeit konnte nicht ermittelt werden"
+msgid "Remaining time not available"
+msgstr "Verbleibende Zeit nicht verfügbar"
 
 #. Translators: The description of an NVDA command for reading the remaining time of the currently playing track in Foobar 2000.
 msgid "Reports the remaining time of the currently playing track, if any"
 msgstr "Zeigt die Restlaufzeit des aktuellen Titels an, falls vorhanden"
 
+#. Translators: Reported elapsed time in Foobar2000
+#, python-brace-format
+msgid "{elapsedTime} elapsed"
+msgstr "{elapsedTime} verstrichen"
+
+#. Translators: Reported if the elapsed time is not available in Foobar2000
+msgid "Elapsed time not available"
+msgstr "Verstrichene Zeit nicht verfügbar"
+
 #. Translators: The description of an NVDA command for reading the elapsed time of the currently playing track in Foobar 2000.
 msgid "Reports the elapsed time of the currently playing track, if any"
 msgstr ""
 "Zeigt die bisherige Spieldauer des aktuellen Titels an, falls vorhanden"
+
+#. Translators: Reported remaining time in Foobar2000
+#, python-brace-format
+msgid "{totalTime} total"
+msgstr "Insgesamt {totalTime}"
 
 #. Translators: Reported if the total time is not available in Foobar2000
 msgid "Total time not available"
@@ -7237,6 +7388,25 @@ msgstr "{firstAddress} {firstValue} bis {lastAddress} {lastValue}"
 msgid "{firstAddress} through {lastAddress}"
 msgstr "{firstAddress} bis {lastAddress}"
 
+#. Translators: a measurement in inches
+#, python-brace-format
+msgid "{val:.2f} inches"
+msgstr "{val:.2f} Zoll"
+
+#. Translators: a measurement in centimetres
+#, python-brace-format
+msgid "{val:.2f} centimetres"
+msgstr "{val:.2f} Zentimeter"
+
+#. Translators: LibreOffice, report cursor position in the current page
+#, python-brace-format
+msgid ""
+"cursor positioned {horizontalDistance} from left edge of page, "
+"{verticalDistance} from top edge of page"
+msgstr ""
+"Die Cursor-Position liegt bei {horizontalDistance} vom linken Rand und "
+"{verticalDistance} vom oberen Rand der Seite"
+
 msgid "left"
 msgstr "Links"
 
@@ -7408,9 +7578,60 @@ msgstr "&Braille-Betrachter beim Starten anzeigen"
 msgid "&Hover for cell routing"
 msgstr "&Schweben für Zell-Routing"
 
-#. Translators: This is the label for a combobox in the
-#. document formatting settings panel.
-#. Translators: A choice in a combo box in the document formatting dialog  to report No  line Indentation.
+#. Translators: One of the show states of braille messages
+#. (the disabled mode turns off showing of braille messages completely).
+#. Translators: Label for an option in NVDA settings.
+#. Translators: The status shown for an addon when its currently suspended do to addons being disabled.
+msgid "Disabled"
+msgstr "Deaktiviert"
+
+#. Translators: One of the show states of braille messages
+#. (the timeout mode shows messages for the specific time).
+msgid "Use timeout"
+msgstr "Zeitüberschreitung verwenden"
+
+#. Translators: One of the show states of braille messages
+#. (the indefinitely mode prevents braille messages from disappearing automatically).
+msgid "Show indefinitely"
+msgstr "Dauerhaft anzeigen"
+
+#. Translators: The label for a braille setting indicating that braille should be
+#. tethered to focus or review cursor automatically.
+msgid "automatically"
+msgstr "Automatisch"
+
+#. Translators: The label for a braille setting indicating that braille should be tethered to focus.
+msgid "to focus"
+msgstr "An Fokus"
+
+#. Translators: The label for a braille setting indicating that braille should be tethered
+#. to the review cursor.
+msgid "to review"
+msgstr "An NVDA-Cursor"
+
+#. Translators: A choice in a combo box in the document formatting dialog to report No line Indentation.
+msgctxt "line indentation setting"
+msgid "Off"
+msgstr "Ausgeschaltet"
+
+#. Translators: A choice in a combo box in the document formatting dialog to report indentation
+#. with Speech.
+msgctxt "line indentation setting"
+msgid "Speech"
+msgstr "Ansagen"
+
+#. Translators: A choice in a combo box in the document formatting dialog to report indentation
+#. with tones.
+msgctxt "line indentation setting"
+msgid "Tones"
+msgstr "Signaltöne"
+
+#. Translators: A choice in a combo box in the document formatting dialog to report indentation with both
+#. Speech and tones.
+msgctxt "line indentation setting"
+msgid "Both Speech and Tones"
+msgstr "Sowohl Sprache als auch Signaltöne"
+
 #. Translators: This is the label for a combobox in the
 #. document formatting settings panel.
 msgid "Off"
@@ -7431,17 +7652,40 @@ msgstr "Zeilen"
 msgid "Columns"
 msgstr "Spalten"
 
-#. Translators: Label for an option in NVDA settings.
-#. Translators: The status shown for an addon when its currently suspended do to addons being disabled.
-#. Translators: One of the show states of braille messages
-#. (the disabled mode turns off showing of braille messages completely).
-msgid "Disabled"
-msgstr "Deaktiviert"
+#. Translators: This is the label for a combobox in the
+#. document formatting settings panel.
+msgid "Styles"
+msgstr "Formatvorlagen"
+
+#. Translators: This is the label for a combobox in the
+#. document formatting settings panel.
+msgid "Both Colors and Styles"
+msgstr "Beides - Farben und Formatierungen"
 
 #. Translators: Label for an option in NVDA settings.
 #. Translators: The status shown for an addon when its currently running in NVDA.
 msgid "Enabled"
 msgstr "Aktiviert"
+
+#. Translators: Label for a paragraph style in NVDA settings.
+msgid "Handled by application"
+msgstr "Wird von der Anwendung behandelt"
+
+#. Translators: Label for a paragraph style in NVDA settings.
+msgid "Single line break"
+msgstr "Einfacher Zeilenumbruch"
+
+#. Translators: Label for a paragraph style in NVDA settings.
+msgid "Multi line break"
+msgstr "Mehrfacher Zeilenumbruch"
+
+#. Translators: Label for an option in NVDA settings.
+msgid "Diffing"
+msgstr "Abweichend"
+
+#. Translators: Label for an option in NVDA settings.
+msgid "UIA notifications"
+msgstr "UIA-Benachrichtigungen"
 
 #. Translators: The title of the document used to present the result of content recognition.
 msgid "Result"
@@ -7732,11 +7976,11 @@ msgstr "Werkzeugleiste"
 
 #. Translators: Identifies a column header in tables and spreadsheets.
 msgid "column header"
-msgstr "Spaltenüberschrift"
+msgstr "Spaltenbeschriftung"
 
 #. Translators: Identifies a row header in tables and spreadsheets.
 msgid "row header"
-msgstr "Zeilenüberschrift"
+msgstr "Zeilenbeschriftung"
 
 #. Translators: Identifies a drop down button (a button that, when clicked, opens a menu of its own).
 msgid "drop down button"
@@ -8209,6 +8453,11 @@ msgstr "Kommentar"
 msgid "suggestion"
 msgstr "Vorschlag"
 
+#. Translators: The word role for a switch control
+#. I.e. a control that can be switched on or off.
+msgid "switch"
+msgstr "Schalter"
+
 #. Translators: Indicates that a particular state of an object is negated.
 #. Separate strings have now been defined for commonly negated states (e.g. not selected and not
 #. checked), but this still might be used in some other cases.
@@ -8247,7 +8496,7 @@ msgstr "teilweise aktiviert"
 
 #. Translators: This is presented when a three state toggle button is half pressed.
 msgid "half pressed"
-msgstr "halb gedrückt"
+msgstr "teilweise gedrückt"
 
 #. Translators: This is presented when the control is a read-only control such as read-only edit box.
 msgid "read only"
@@ -8255,11 +8504,11 @@ msgstr "schreibgeschützt"
 
 #. Translators: This is presented when a tree view or submenu item is expanded.
 msgid "expanded"
-msgstr "erweitert"
+msgstr "ausgeklappt"
 
 #. Translators: This is presented when a tree view or submenu is collapsed.
 msgid "collapsed"
-msgstr "reduziert"
+msgstr "eingeklappt"
 
 #. Translators: This is presented when a control or a document becomes invisible.
 msgid "invisible"
@@ -8391,6 +8640,22 @@ msgstr "freigegeben"
 msgid "has note"
 msgstr "enthält Notiz"
 
+#. Translators: Presented when a control has a pop-up dialog.
+msgid "opens dialog"
+msgstr "Dialogfeld öffnen"
+
+#. Translators: Presented when a control has a pop-up grid.
+msgid "opens grid"
+msgstr "Gitter öffnen"
+
+#. Translators: Presented when a control has a pop-up list box.
+msgid "opens list"
+msgstr "Liste öffnen"
+
+#. Translators: Presented when a control has a pop-up tree.
+msgid "opens tree"
+msgstr "Baum öffnen"
+
 #. Translators: This is presented when a selectable object (e.g. a list item) is not selected.
 msgid "not selected"
 msgstr "Nicht ausgewählt"
@@ -8407,6 +8672,21 @@ msgstr "Nicht aktiviert"
 #. This is only reported for objects which support accessible drag and drop.
 msgid "done dragging"
 msgstr "Objekt wurde verschoben"
+
+#. Translators: This is spoken when a paragraph is considered blank.
+#. Translators: This is spoken when the line is considered blank.
+#. Translators: This is spoken when NVDA moves to an empty line.
+#. Translators: This is spoken when the line is considered blank.
+msgid "blank"
+msgstr "Leer"
+
+#. Translators: this message is given when there is no next paragraph when navigating by paragraph
+msgid "No next paragraph"
+msgstr "Kein weiterer Absatz"
+
+#. Translators: this message is given when there is no previous paragraph when navigating by paragraph
+msgid "No previous paragraph"
+msgstr "Kein vorheriger Absatz"
 
 #. Translators: Reported when last saved configuration has been applied by using revert to saved configuration option in NVDA menu.
 msgid "Configuration applied"
@@ -9012,6 +9292,10 @@ msgstr ""
 "Diese Aktion ist nicht verfügbar, während ein Dialogfeld eine Antwort "
 "erfordert"
 
+#. Translators: Reported when an action cannot be performed because Windows is locked.
+msgid "Action unavailable while Windows is locked"
+msgstr "Aktion ist nicht verfügbar, sobald Windows gesperrt ist"
+
 #. Translators: The title of the Configuration Profiles dialog.
 msgid "Configuration Profiles"
 msgstr "Konfigurationsprofile verwalten"
@@ -9063,10 +9347,12 @@ msgid "Error activating profile."
 msgstr "Fehler bei der Aktivierung des Profils."
 
 #. Translators: The confirmation prompt displayed when the user requests to delete a configuration profile.
-msgid "This profile will be permanently deleted. This action cannot be undone."
+#. The placeholder {} is replaced with the name of the configuration profile that will be deleted.
+msgid ""
+"The profile {} will be permanently deleted. This action cannot be undone."
 msgstr ""
-"Dieses Profil wird dauerhaft gelöscht. Es kann nicht rückgängig gemacht "
-"werden."
+"Das Profil {} wird dauerhaft gelöscht. Die Aktion kann nicht rückgängig "
+"gemacht werden."
 
 #. Translators: The title of the confirmation dialog for deletion of a configuration profile.
 msgid "Confirm Deletion"
@@ -9381,6 +9667,7 @@ msgstr ""
 "Bitte klicken Sie auf \"OK\", um die installierte NVDA-Version zu starten."
 
 #. Translators: The title of a dialog presented to indicate a successful operation.
+#. Translators: Title of a dialog shown when a portable copy of NVDA is created.
 msgid "Success"
 msgstr "Fertig"
 
@@ -9501,23 +9788,18 @@ msgstr ""
 #. Translators: The message displayed when the user has not specified an absolute destination directory
 #. in the Create Portable NVDA dialog.
 msgid ""
-"Please specify an absolute path (including drive letter)  in which to create "
-"the portable copy."
+"Please specify the absolute path where the portable copy should be created. "
+"It may include system variables (%temp%, %homepath%, etc.)."
 msgstr ""
-"Bitte geben Sie einen absoluten Pfad (einschließlich Laufwerksbuchstaben) "
-"ein, in dem die portable Version erstellt werden soll."
+"Bitte geben Sie den Pfad an, in dem die portable NVDA-Version erstellt "
+"werden soll. Dabei können Systemvariablen verwendet werden (%temp%, "
+"%homepath%, etc.)."
 
-#. Translators: The message displayed when the user specifies an invalid destination drive
-#. in the Create Portable NVDA dialog.
-#, python-format
-msgid "Invalid drive %s"
-msgstr "Ungültiges Laufwerk %s"
-
-#. Translators: The title of the dialog presented while a portable copy of NVDA is bieng created.
+#. Translators: The title of the dialog presented while a portable copy of NVDA is being created.
 msgid "Creating Portable Copy"
 msgstr "Portable Version erstellen"
 
-#. Translators: The message displayed while a portable copy of NVDA is bieng created.
+#. Translators: The message displayed while a portable copy of NVDA is being created.
 msgid "Please wait while a portable copy of NVDA is created."
 msgstr "Bitte warten Sie, während die portable NVDA-Version erstellt wird."
 
@@ -9526,18 +9808,16 @@ msgid "NVDA is unable to remove or overwrite a file."
 msgstr "NVDA konnte eine Datei nicht entfernen bzw. ersetzen."
 
 #. Translators: The message displayed when an error occurs while creating a portable copy of NVDA.
-#. %s will be replaced with the specific error message.
-#, python-format
-msgid "Failed to create portable copy: %s"
-msgstr "Portable Version konnte nicht erstellt werden: %s"
+#. {error} will be replaced with the specific error message.
+#, python-brace-format
+msgid "Failed to create portable copy: {error}."
+msgstr "Die portable NVDA-Version konnte nicht erstellt werden: {error}."
 
 #. Translators: The message displayed when a portable copy of NVDA has been successfully created.
-#. %s will be replaced with the destination directory.
-#, python-format
-msgid "Successfully created a portable copy of NVDA at %s"
-msgstr ""
-"Die portable Version von NVDA wurde erfolgreich im Verzeichnis \"%s\" "
-"erstellt"
+#. {dir} will be replaced with the destination directory.
+#, python-brace-format
+msgid "Successfully created a portable copy of NVDA at {dir}"
+msgstr "Eine portable NVDA-Version in {dir} wurde erfolgreich erstellt"
 
 #. Translators: The title of the NVDA log viewer window.
 msgid "NVDA Log Viewer"
@@ -10253,19 +10533,6 @@ msgstr "&Zeilennummern"
 msgid "Line &indentation reporting:"
 msgstr "Zeilene&inrückungen:"
 
-#. Translators: A choice in a combo box in the document formatting dialog  to report indentation with Speech.
-msgctxt "line indentation setting"
-msgid "Speech"
-msgstr "Ansagen"
-
-#. Translators: A choice in a combo box in the document formatting dialog  to report indentation with tones.
-msgid "Tones"
-msgstr "Signaltöne"
-
-#. Translators: A choice in a combo box in the document formatting dialog  to report indentation with both  Speech and tones.
-msgid "Both Speech and Tones"
-msgstr "Beides - Ansage und Signaltöne"
-
 #. Translators: This message is presented in the document formatting settings panelue
 #. If this option is selected, NVDA will report paragraph indentation if available.
 msgid "&Paragraph indentation"
@@ -10300,16 +10567,6 @@ msgstr "Übersc&hriften"
 #. document formatting settings panel.
 msgid "Cell c&oordinates"
 msgstr "Zell&koordinaten"
-
-#. Translators: This is the label for a combobox in the
-#. document formatting settings panel.
-msgid "Styles"
-msgstr "Formatvorlagen"
-
-#. Translators: This is the label for a combobox in the
-#. document formatting settings panel.
-msgid "Both Colors and Styles"
-msgstr "Beides - Farben und Formatierungen"
 
 #. Translators: This is the label for a combobox in the
 #. document formatting settings panel.
@@ -10367,6 +10624,14 @@ msgid "Report formatting chan&ges after the cursor (can cause a lag)"
 msgstr ""
 "Änderungen der Formatierungen nach dem Cursor ansa&gen (NVDA kann dadurch "
 "langsamer reagieren)"
+
+#. Translators: This is the label for the document navigation settings panel.
+msgid "Document Navigation"
+msgstr "Dokument-Navigation"
+
+#. Translators: This is a label for the paragraph navigation style in the document navigation dialog
+msgid "&Paragraph style:"
+msgstr "&Absatz-Eigenschaft:"
 
 #. Translators: This is the label for the touch interaction settings panel.
 msgid "Touch Interaction"
@@ -10533,7 +10798,7 @@ msgstr "Anmerkungen"
 #. Translators: This is the label for a checkbox in the
 #. Advanced settings panel.
 msgid "Report 'has details' for structured annotations"
-msgstr "\"enthält Details\" mitteilen für strukturierte Anmerkungen"
+msgstr "Für strukturierte Anmerkungen \"enthält Details\" mitteilen"
 
 #. Translators: This is the label for a checkbox in the
 #. Advanced settings panel.
@@ -10616,6 +10881,10 @@ msgstr "Diff Match Patch"
 #. by line, using the difflib algorithm.
 msgid "Difflib"
 msgstr "Difflib"
+
+#. Translators: This is the label for a combo-box in the Advanced settings panel.
+msgid "Speak new text in Windows Terminal via:"
+msgstr "Neuen Text in Windows-Terminal mitteilen via:"
 
 #. Translators: This is the label for combobox in the Advanced settings panel.
 msgid "Attempt to cancel speech for expired focus events:"
@@ -10761,16 +11030,6 @@ msgstr "Cursor-Form für &Fokus:"
 #. Translators: The label for a setting in braille settings to select the cursor shape when tethered to review.
 msgid "Cursor shape for &review:"
 msgstr "Cursor-Form für &NVDA-Cursor:"
-
-#. Translators: One of the show states of braille messages
-#. (the timeout mode shows messages for the specific time).
-msgid "Use timeout"
-msgstr "Zeitüberschreitung verwenden"
-
-#. Translators: One of the show states of braille messages
-#. (the indefinitely mode prevents braille messages from disappearing automatically).
-msgid "Show indefinitely"
-msgstr "Dauerhaft anzeigen"
 
 #. Translators: The label for a setting in braille settings to combobox enabling user
 #. to decide if braille messages should be shown and automatically disappear from braille display.
@@ -10981,9 +11240,14 @@ msgid "Dictionary Entry Error"
 msgstr "Fehler im Wörterbuch-Eintrag"
 
 #. Translators: This is an error message to let the user know that the dictionary entry is not valid.
-#, python-format
-msgid "Regular Expression error: \"%s\"."
-msgstr "Fehler im Regulären Ausdruck: \"%s\"."
+#, python-brace-format
+msgid "Regular Expression error in the pattern field: \"{error}\"."
+msgstr "Fehler im Regulären Ausdruck beim Feld für das Suchen: \"{error}\"."
+
+#. Translators: This is an error message to let the user know that the dictionary entry is not valid.
+#, python-brace-format
+msgid "Regular Expression error in the replacement field: \"{error}\"."
+msgstr "Fehler im Regulären Ausdruck beim Feld für das Ersetzen: \"{error}\"."
 
 #. Translators: The label for the list box of dictionary entries in speech dictionary dialog.
 msgid "&Dictionary entries"
@@ -11078,6 +11342,14 @@ msgstr "&Dauergroßschreibtaste als NVDA-Taste verwenden"
 msgid "&Show this dialog when NVDA starts"
 msgstr "Dieses Dialogfeld beim NVDA-&Start anzeigen"
 
+#. Translators: The title of an error message box displayed when validating the startup dialog
+msgid ""
+"At least one NVDA modifier key must be set. Caps lock will remain as an NVDA "
+"modifier key. "
+msgstr ""
+"Es muss mindestens eine NVDA-Modifikatortaste festgelegt werden. Die "
+"Dauergroßschreibtaste bleibt als Änderung der NVDA-Taste erhalten. "
+
 #. Translators: The label for a checkbox in NvDA installation program to agree to the license agreement.
 msgid "I &agree"
 msgstr "&Akzeptieren"
@@ -11097,7 +11369,7 @@ msgstr "&Ohne Installation fortfahren"
 
 #. Translators: The label of the license text which will be shown when NVDA installation program starts.
 msgid "License Agreement"
-msgstr "Lizenz-Vereinbarung"
+msgstr "Lizenzvereinbarung"
 
 #. Translators: The title of the dialog asking if usage data can be collected
 msgid "NVDA  Usage Data Collection"
@@ -11131,18 +11403,12 @@ msgstr ""
 
 #. Translators: Describes a command.
 msgid "Exit math interaction"
-msgstr "Beendet die Interaktion mit mathematischen Inhalten"
+msgstr "Mathematische Interaktion beenden"
 
 #. Translators: Reported when the user attempts math interaction
 #. but math interaction is not supported.
 msgid "Math interaction not supported."
 msgstr "Die Interaktion mit mathematischen Inhalten wird nicht unterstützt."
-
-#. Translators: This is spoken when the line is considered blank.
-#. Translators: This is spoken when NVDA moves to an empty line.
-#. Translators: This is spoken when the line is considered blank.
-msgid "blank"
-msgstr "Leer"
 
 #. Translators: cap will be spoken before the given letter when it is capitalized.
 #, python-format
@@ -11187,15 +11453,19 @@ msgid "row %s"
 msgstr "Reihe %s"
 
 #. Translators: Speaks the row span added to the current row number (example output: through 5).
-#. Translators: Speaks the column span added to the current column number (example output: through 5).
-#, python-format
-msgid "through %s"
-msgstr "bis %s"
+#, python-brace-format
+msgid "through {endRow}"
+msgstr "bis {endRow}"
 
 #. Translators: Speaks current column number (example output: column 3).
 #, python-format
 msgid "column %s"
 msgstr "Spalte %s"
+
+#. Translators: Speaks the column span added to the current column number (example output: through 5).
+#, python-brace-format
+msgid "through {endCol}"
+msgstr "bis {endCol}"
 
 #. Translators: Speaks the row and column span added to the current row and column numbers
 #. (example output: through row 5 column 3).
@@ -11220,7 +11490,7 @@ msgstr "mit %s Zeilen"
 
 #. Translators: Speaks when there are further details/annotations that can be fetched manually.
 msgid "has details"
-msgstr "Hat Details"
+msgstr "enthält Details"
 
 #. Translators: Speaks the item level in treeviews (example output: level 2).
 #, python-format
@@ -11369,6 +11639,15 @@ msgstr "markiert"
 msgid "not marked"
 msgstr "nicht markiert"
 
+#. Translators: Reported when text is color-highlighted
+#, python-brace-format
+msgid "highlighted in {color}"
+msgstr "hervorgehoben in {color}"
+
+#. Translators: Reported when text is no longer marked
+msgid "not highlighted"
+msgstr "nicht hervorgehoben"
+
 #. Translators: Reported when text is marked as strong (e.g. bold)
 msgid "strong"
 msgstr "stark betont"
@@ -11418,11 +11697,11 @@ msgstr "nicht unterstrichen"
 
 #. Translators: Reported when text is hidden.
 msgid "hidden"
-msgstr "Ausgeblendet"
+msgstr "ausgeblendet"
 
 #. Translators: Reported when text is not hidden.
 msgid "not hidden"
-msgstr "Eingeblendet"
+msgstr "eingeblendet"
 
 #. Translators: Reported when text is left-aligned.
 msgid "align left"
@@ -11468,15 +11747,15 @@ msgstr "Vertikal an Grundlinie ausgerichtet"
 
 #. Translators: Reported when text is vertically justified.
 msgid "vertical align justified"
-msgstr "Vertikale Ausrichtung Blocksatz"
+msgstr "Vertikal an Blocksatz ausgerichtet"
 
 #. Translators: Reported when text is vertically justified but with character spacing (For some Asian content).
 msgid "vertical align distributed"
-msgstr "Vertikale Ausrichtung Sperrdruck"
+msgstr "Vertikal an Sperrdruck ausgerichtet"
 
 #. Translators: Reported when text has reverted to default vertical alignment.
 msgid "vertical align default"
-msgstr "Vertikale Standard-Ausrichtung"
+msgstr "Vertikal an Standard ausgerichtet"
 
 #. Translators: the label for paragraph format left indent
 msgid "left indent"
@@ -11484,7 +11763,7 @@ msgstr "linksbündig eingerückt"
 
 #. Translators: the message when there is no paragraph format left indent
 msgid "no left indent"
-msgstr "keine linksbündige Einrückung"
+msgstr "Keine linksbündige Einrückung"
 
 # Deutsche Sprachdatei für NVDA
 # Copyright © 2006 - 2010, das Deutsche NVDA-Team.
@@ -11494,7 +11773,7 @@ msgstr "rechtsbündig eingerückt"
 
 #. Translators: the message when there is no paragraph format right indent
 msgid "no right indent"
-msgstr "keine rechtsbündige Einrückung"
+msgstr "Keine rechtsbündige Einrückung"
 
 #. Translators: the label for paragraph format hanging indent
 msgid "hanging indent"
@@ -11502,15 +11781,15 @@ msgstr "hängender Einzug"
 
 #. Translators: the message when there is no paragraph format hanging indent
 msgid "no hanging indent"
-msgstr "kein hängender Einzug"
+msgstr "Kein hängender Einzug"
 
 #. Translators: the label for paragraph format first line indent
 msgid "first line indent"
-msgstr "Einzug für erste Zeile"
+msgstr "Einzug für die erste Zeile"
 
 #. Translators: the message when there is no paragraph format first line indent
 msgid "no first line indent"
-msgstr "kein Einzug für erste Zeile"
+msgstr "Kein Einzug für die erste Zeile"
 
 #. Translators: a type of line spacing (E.g. single line spacing)
 #, python-format
@@ -11560,7 +11839,7 @@ msgstr "Tabellen-Ende"
 #. Translators: reports number of columns and rows in a table (example output: table with 3 columns and 5 rows).
 #, python-brace-format
 msgid "table with {columnCount} columns and {rowCount} rows"
-msgstr "Tabelle mit {columnCount} Spalten und {rowCount} Reihen"
+msgstr "Tabelle mit {columnCount} Spalten und {rowCount} Zeilen"
 
 #. Translators: name of the default espeak varient.
 msgctxt "espeakVarient"
@@ -11581,7 +11860,7 @@ msgstr "Wort"
 #. Translators: the current position's screen coordinates in pixels
 #, python-brace-format
 msgid "Positioned at {x}, {y}"
-msgstr "Positioniert auf {x}, {y}"
+msgstr "Position bei {x}, {y}"
 
 #. Translators: current position in a document as a percentage of the document length
 #, python-brace-format
@@ -11592,6 +11871,41 @@ msgstr "{curPercent:.0f} Prozent"
 #, python-brace-format
 msgid "at {x}, {y}"
 msgstr "bei {x}, {y}"
+
+#. Translators: used to format time locally.
+#. substitution rules: {S} seconds
+#, python-brace-format
+msgctxt "time format"
+msgid "{S}"
+msgstr "{S}"
+
+#. Translators: used to format time locally.
+#. substitution rules: {S} seconds, {M} minutes
+#, python-brace-format
+msgctxt "time format"
+msgid "{M}:{S}"
+msgstr "{M}:{S}"
+
+#. Translators: used to format time locally.
+#. substitution rules: {S} seconds, {M} minutes, {H} hours
+#, python-brace-format
+msgctxt "time format"
+msgid "{H}:{M}:{S}"
+msgstr "{H}:{M}:{S}"
+
+#. Translators: used to format time locally.
+#. substitution rules: {S} seconds, {M} minutes, {H} hours, {D} day
+#, python-brace-format
+msgctxt "time format"
+msgid "{D} day {H}:{M}:{S}"
+msgstr "{D} Tag {H}:{M}:{S}"
+
+#. Translators: used to format time locally.
+#. substitution rules: {S} seconds, {M} minutes, {H} hours, {D} days
+#, python-brace-format
+msgctxt "time format"
+msgid "{D} days {H}:{M}:{S}"
+msgstr "{D} Tage {H}:{M}:{S}"
 
 #. Translators: This is the message for a warning shown if NVDA cannot determine if
 #. Windows is locked.
@@ -11626,11 +11940,11 @@ msgstr "Aktualisiert den Inhalt des Dokuments"
 
 #. Translators: Presented when use screen layout option is toggled.
 msgid "Use screen layout on"
-msgstr "Bildschirmlayout eingeschaltet"
+msgstr "Bildschirm-Layout verwenden eingeschaltet"
 
 #. Translators: Presented when use screen layout option is toggled.
 msgid "Use screen layout off"
-msgstr "Bildschirmlayout ausgeschaltet"
+msgstr "Bildschirm-Layout verwenden ausgeschaltet"
 
 #. Translators: shown for a highlighter setting that toggles
 #. highlighting the system focus.
@@ -11707,12 +12021,12 @@ msgid "No system battery"
 msgstr "Kein Akku vorhanden"
 
 #. Translators: Reported when the battery is plugged in, and now is charging.
-msgid "Charging battery"
-msgstr "Akku wird aufgeladen"
+msgid "Plugged in"
+msgstr "Angeschlossen"
 
 #. Translators: Reported when the battery is no longer plugged in, and now is not charging.
-msgid "AC disconnected"
-msgstr "Netzteil getrennt"
+msgid "Unplugged"
+msgstr "Nicht angeschlossen"
 
 #. Translators: This is the estimated remaining runtime of the laptop battery.
 #, python-brace-format
@@ -11736,7 +12050,7 @@ msgstr "%s Einträge"
 msgid "Set row {rowNumber} column {columnNumber} as start of column headers"
 msgstr ""
 "Die Zeile {rowNumber} und die Spalte {columnNumber} wurden als Beginn der "
-"Spaltenüberschrift festgelegt"
+"Spaltenbeschriftung festgelegt"
 
 #. Translators: a message reported in the SetColumnHeader script for Microsoft Word.
 #, python-brace-format
@@ -11744,21 +12058,21 @@ msgid ""
 "Already set row {rowNumber} column {columnNumber} as start of column headers"
 msgstr ""
 "Die Zeile {rowNumber} und die Spalte {columnNumber} wurden bereits als "
-"Beginn der Spaltenüberschrift festgelegt"
+"Beginn der Spaltenbeschriftung festgelegt"
 
 #. Translators: a message reported in the SetColumnHeader script for Microsoft Word.
 #, python-brace-format
 msgid "Removed row {rowNumber} column {columnNumber}  from column headers"
 msgstr ""
 "Die Zeile {rowNumber} und die Spalte {columnNumber} wurden als "
-"Spaltenüberschrift entfernt"
+"Spaltenbeschriftung entfernt"
 
 #. Translators: a message reported in the SetColumnHeader script for Microsoft Word.
 #, python-brace-format
 msgid "Cannot find row {rowNumber} column {columnNumber}  in column headers"
 msgstr ""
-"Die Zeile {rowNumber} und die Spalte {columnNumber} konnten in der "
-"Spaltenüberschrift gefunden werden"
+"Die Zeile {rowNumber} und die Spalte {columnNumber} wurden in der "
+"Spaltenbeschriftung nicht gefunden"
 
 msgid ""
 "Pressing once will set this cell as the first column header for any cells "
@@ -11796,8 +12110,8 @@ msgstr ""
 #, python-brace-format
 msgid "Cannot find row {rowNumber} column {columnNumber}  in row headers"
 msgstr ""
-"Die Zeile {rowNumber} und die Spalte {columnNumber} konnten in der "
-"Zeilenbeschriftung nicht gefunden werden"
+"Die Zeile {rowNumber} und die Spalte {columnNumber} wurden in der "
+"Zeilenbeschriftung nicht gefunden"
 
 msgid ""
 "Pressing once will set this cell as the first row header for any cells lower "
@@ -12704,11 +13018,13 @@ msgid "Legend key for Series {seriesName} {seriesIndex} of {seriesCount}"
 msgstr ""
 "Schlüssel der Legende für Serie {seriesName} {seriesIndex} von {seriesCount}"
 
-#. Translators: The default color of text when a color has not been set by the author.
-#. Translators: The default background color  when a color has not been set by the author.
-#. Translators: the default (automatic) color in Microsoft Word
-msgid "default color"
-msgstr "Standard-Farbe"
+#. Translators: The text color as reported in Wordpad (Automatic) or NVDA log viewer.
+#. Translators: The background color as reported in Wordpad (Automatic) or NVDA log viewer.
+#. Translators: The text color as reported in Wordpad (Automatic) or NVDA log viewer.
+#. Translators: The background color as reported in Wordpad (Automatic) or NVDA log viewer.
+#, python-brace-format
+msgid "{color} (default color)"
+msgstr "{color} (Standardfarbe)"
 
 #. Translators: The color of text cannot be detected.
 #. Translators: The background color cannot be detected.
@@ -12863,30 +13179,30 @@ msgstr "Öffnet ein Dropdown-Element der aktuellen Zelle"
 
 #. Translators: the description  for a script for Excel
 msgid "Sets the current cell as start of column header"
-msgstr "Setzt die aktuelle Zelle als Anfang der Spaltenüberschrift"
+msgstr "Setzt die aktuelle Zelle als Beginn der Spaltenbeschriftung"
 
 #. Translators: a message reported in the SetColumnHeader script for Excel.
 #, python-brace-format
 msgid "Set {address} as start of column headers"
-msgstr "Die Zelle {address} wird als Beginn der Spaltenüberschrift festgelegt"
+msgstr "Die Zelle {address} wird als Beginn der Spaltenbeschriftung festgelegt"
 
 #. Translators: a message reported in the SetColumnHeader script for Excel.
 #, python-brace-format
 msgid "Already set {address} as start of column headers"
 msgstr ""
-"Die Zelle {address} wurde bereits als Beginn der Spaltenüberschrift "
+"Die Zelle {address} wurde bereits als Beginn der Spaltenbeschriftung "
 "zugewiesen"
 
 #. Translators: a message reported in the SetColumnHeader script for Excel.
 #, python-brace-format
 msgid "Removed {address}    from column headers"
-msgstr "Die Zelle {address} wurde aus der Spaltenüberschrift entfernt"
+msgstr "Die Zelle {address} wurde aus der Spaltenbeschriftung entfernt"
 
 #. Translators: a message reported in the SetColumnHeader script for Excel.
 #, python-brace-format
 msgid "Cannot find {address}    in column headers"
 msgstr ""
-"Die Zelle {address} konnte in der Spaltenüberschrift nicht gefunden werden"
+"Die Zelle {address} konnte in der Spaltenbeschriftung nicht gefunden werden"
 
 msgid ""
 "Pressing once will set this cell as the first column header for any cells "
@@ -12894,19 +13210,18 @@ msgid ""
 "the current column header for this cell."
 msgstr ""
 "Wenn Sie diese Tastenkombination einmal drücken, wird die aktuelle Zelle als "
-"Beginn der Spaltenüberschrift für alle Zellen unterhalb und rechts von "
-"dieser Zelle innerhalb dieser Region festgelegt. Drücken Sie die "
-"Tastenkombination zweimal, um die Zuweisung wieder zu entfernen."
+"Beginn der Spaltenbeschriftung für alle Zellen unterhalb und rechts davon "
+"innerhalb dieser Region festgelegt. Drücken Sie die Tastenkombination "
+"zweimal, um die Zuweisung wieder zu entfernen."
 
 #. Translators: the description  for a script for Excel
 msgid "sets the current cell as start of row header"
-msgstr "Setzt die aktuelle Zelle als Anfang des Zeilenüberschrift"
+msgstr "Setzt die aktuelle Zelle als Beginn der Zeilenbeschriftung"
 
 #. Translators: a message reported in the SetRowHeader script for Excel.
 #, python-brace-format
 msgid "Set {address} as start of row headers"
-msgstr ""
-"Die Zelle {address} wurde als Beginn der Zeilen-Beschriftung festgelegt"
+msgstr "Die Zelle {address} wurde als Beginn der Zeilenbeschriftung festgelegt"
 
 #. Translators: a message reported in the SetRowHeader script for Excel.
 #, python-brace-format
@@ -12932,9 +13247,9 @@ msgid ""
 "current row header for this cell."
 msgstr ""
 "Wenn Sie diese Tastenkombination einmal drücken, wird die aktuelle Zelle als "
-"Beginn der Zeilenbeschriftung für alle Zellen unterhalb und rechts von "
-"dieser Zelle innerhalb dieser Region festgelegt. Drücken Sie die "
-"Tastenkombination zweimal, um die Zuweisung wieder zu entfernen."
+"Beginn der Zeilenbeschriftung für alle Zellen unterhalb und rechts davon "
+"innerhalb dieser Region festgelegt. Drücken Sie die Tastenkombination "
+"zweimal, um die Zuweisung wieder zu entfernen."
 
 #. Translators: a message reported in the get location text script for Excel. {0} is replaced with the name of the excel worksheet, and {1} is replaced with the row and column identifier EG "G4"
 #, python-brace-format
@@ -12979,37 +13294,37 @@ msgstr "{firstAddress} {firstContent} bis {lastAddress} {lastContent}"
 
 #. Translators: border positions in Microsoft Excel.
 msgid "top edge"
-msgstr "Obere Ecke"
+msgstr "Oberer Rand"
 
 #. Translators: border positions in Microsoft Excel.
 msgid "bottom edge"
-msgstr "Untere Ecke"
+msgstr "Unterer Rand"
 
 #. Translators: border positions in Microsoft Excel.
 msgid "left edge"
-msgstr "Linke Ecke"
+msgstr "Linker Rand"
 
 # Deutsche Sprachdatei für NVDA
 # Copyright © 2006 - 2010, das Deutsche NVDA-Team.
 #. Translators: border positions in Microsoft Excel.
 msgid "right edge"
-msgstr "Rechte Ecke"
+msgstr "Rechter Rand"
 
 #. Translators: border positions in Microsoft Excel.
 msgid "up-right diagonal line"
-msgstr "Obere diagonale Linie rechts"
+msgstr "diagonale Linie oben rechts"
 
 #. Translators: border positions in Microsoft Excel.
 msgid "down-right diagonal line"
-msgstr "diagonale Linie nach rechts-unten"
+msgstr "diagonale Linie rechts unten"
 
 #. Translators: border positions in Microsoft Excel.
 msgid "horizontal borders except outside"
-msgstr "Horizontal innere Linie"
+msgstr "Horizontal innerer Rahmen"
 
 #. Translators: border positions in Microsoft Excel.
 msgid "vertical borders except outside"
-msgstr "Vertikal innerer  Rahmen"
+msgstr "Vertikal innerer Rahmen"
 
 #. Translators: border styles in Microsoft Excel.
 msgid "continuous"
@@ -13025,7 +13340,7 @@ msgstr "Strich Punkt"
 
 #. Translators: border styles in Microsoft Excel.
 msgid "dash dot dot"
-msgstr "Strich Punkt Punkt"
+msgstr "Strich-Punkt-Punkt"
 
 #. Translators: border styles in Microsoft Excel.
 msgid "dotted"
@@ -13037,7 +13352,7 @@ msgstr "doppelt"
 
 #. Translators: border styles in Microsoft Excel.
 msgid "slanted dash dot"
-msgstr "Strich Punkt (geneigt)"
+msgstr "Strich-Punkt (geneigt)"
 
 #. Translators: border styles in Microsoft Excel.
 msgid "hair"
@@ -13053,19 +13368,19 @@ msgstr "medium"
 
 #. Translators: border styles in Microsoft Excel.
 msgid "thick"
-msgstr "fette Farbe"
+msgstr "dick"
 
 #. Translators: border styles in Microsoft Excel.
 msgid "medium dash dot dot"
-msgstr "Strich Punkt Punkt (Medium)"
+msgstr "Strich Punkt Punkt (medium)"
 
 #. Translators: border styles in Microsoft Excel.
 msgid "medium dash dot"
-msgstr "Strich Punkt (Medium)"
+msgstr "Strich Punkt (medium)"
 
 #. Translators: border styles in Microsoft Excel.
 msgid "medium dashed"
-msgstr "Gestrichelt (Medium)"
+msgstr "Gestrichelt (medium)"
 
 #. Translators: border styles in Microsoft Excel.
 #, python-brace-format
@@ -13080,22 +13395,22 @@ msgstr "{color} {desc}"
 #. Translators: border styles in Microsoft Excel.
 #, python-brace-format
 msgid "{desc} surrounding border"
-msgstr "Randlinien {desc}"
+msgstr "{desc} umschließender Rand"
 
 #. Translators: border styles in Microsoft Excel.
 #, python-brace-format
 msgid "{desc} top and bottom edges"
-msgstr "Obere und untere Ecke {desc}"
+msgstr "{desc} oberer und unterer Rand"
 
 #. Translators: border styles in Microsoft Excel.
 #, python-brace-format
 msgid "{desc} left and right edges"
-msgstr "Linke und rechte Ecken {desc}"
+msgstr "{desc} linker und rechter Rand"
 
 #. Translators: border styles in Microsoft Excel.
 #, python-brace-format
 msgid "{desc} up-right and down-right diagonal lines"
-msgstr "{desc} Diagonale Linien nach rechts oben und rechts unten"
+msgstr "{desc} diagonale Linien von oben nach rechts und von unten nach rechts"
 
 #. Translators: border styles in Microsoft Excel.
 #, python-brace-format
@@ -13116,7 +13431,7 @@ msgstr "Eigenschaft"
 
 #. Translators: a Microsoft Word revision type (changed paragraph number)
 msgid "paragraph number"
-msgstr "Absatznummer"
+msgstr "Absatz-Nummer"
 
 #. Translators: a Microsoft Word revision type (display field)
 msgid "display field"
@@ -13148,7 +13463,7 @@ msgstr "Abschnitts-Eigenschaft"
 
 #. Translators: a Microsoft Word revision type (style definition)
 msgid "style definition"
-msgstr "Formatvorlage Definition"
+msgstr "Formatvorlagen-Definition"
 
 #. Translators: a Microsoft Word revision type (moved from)
 msgid "moved from"
@@ -13177,10 +13492,10 @@ msgid "Endnotes"
 msgstr "Endnoten"
 
 msgid "Even pages footer"
-msgstr "Fußzeilen auf geraden Seiten"
+msgstr "Fußzeile auf geraden Seiten"
 
 msgid "Even pages header"
-msgstr "Kopfzeilen auf geraden Seiten"
+msgstr "Kopfzeile auf geraden Seiten"
 
 msgid "First page footer"
 msgstr "Fußzeile auf der ersten Seite"
@@ -13261,6 +13576,10 @@ msgstr "%.1f Zeilen"
 msgid "Table description"
 msgstr "Tabellen-Beschreibung"
 
+#. Translators: the default (automatic) color in Microsoft Word
+msgid "automatic color"
+msgstr "Automatische Farbe"
+
 #. Translators: a message when toggling formatting in Microsoft word
 msgid "Bold on"
 msgstr "Fett eingeschaltet"
@@ -13339,7 +13658,7 @@ msgstr "Formatvorlage {styleName}, Gliederungsebene {outlineLevel}"
 #. Translators: a message when increasing or decreasing font size in Microsoft Word
 #, python-brace-format
 msgid "{size:g} point font"
-msgstr "Schriftgröße {size:g}"
+msgstr "Schriftgröße {size:g} Punkt"
 
 #. Translators: a message when toggling Display Nonprinting Characters in Microsoft word
 msgid "Display nonprinting characters"
@@ -13372,7 +13691,7 @@ msgstr "{offset:.3g} Millimeter"
 #. Translators: a measurement in Microsoft Word (points)
 #, python-brace-format
 msgid "{offset:.3g} pt"
-msgstr "{offset:.3g} pt"
+msgstr "{offset:.3g} Punkt"
 
 #. Translators: a measurement in Microsoft Word
 #. See http://support.microsoft.com/kb/76388 for details.
@@ -13391,6 +13710,56 @@ msgstr "Doppelter Zeilenabstand"
 #. Translators: a message when switching to 1.5 line spaceing  in Microsoft word
 msgid "1.5 line spacing"
 msgstr "1,5 Zeilenabstand"
+
+#. Translators: Names of braille displays.
+msgid "Caiku Albatross 46/80"
+msgstr "Caiku Albatros 46/80"
+
+#. Translators: A message when number of status cells must be changed
+#. for a braille display driver
+msgid ""
+"To use Albatross with NVDA: change number of status cells in Albatross "
+"internal menu at most "
+msgstr ""
+"Um Albatross mit NVDA zu nutzen: Ändern Sie die maximale Anzahl der "
+"Statusmodule im internen Albatross-Menü "
+
+#~ msgid ""
+#~ "Please specify an absolute path (including drive letter)  in which to "
+#~ "create the portable copy."
+#~ msgstr ""
+#~ "Bitte geben Sie einen absoluten Pfad (einschließlich Laufwerksbuchstaben) "
+#~ "ein, in dem die portable Version erstellt werden soll."
+
+#~ msgid "Invalid drive %s"
+#~ msgstr "Ungültiges Laufwerk %s"
+
+#~ msgid "Charging battery"
+#~ msgstr "Akku wird aufgeladen"
+
+#~ msgid "AC disconnected"
+#~ msgstr "Netzteil getrennt"
+
+#~ msgid "Unable to determine remaining time"
+#~ msgstr "Restzeit konnte nicht ermittelt werden"
+
+#~ msgid "through %s"
+#~ msgstr "bis %s"
+
+#~ msgid "Report line indentation with speech"
+#~ msgstr "Zeileneinrückungen ansagen"
+
+#~ msgid "Report line indentation with tones"
+#~ msgstr "Zeileneinrückung über Signaltöne"
+
+#~ msgid "Report line indentation with speech and tones"
+#~ msgstr "Zeileneinrückungen über Sprachausgabe und Signaltöne"
+
+#~ msgid "Report styles of cell borders"
+#~ msgstr "Stile von Zellrändern ansagen"
+
+#~ msgid "Report colors and styles of cell borders"
+#~ msgstr "Farben und Stile von Zellrahmen ansagen"
 
 #~ msgid "NVDA could not start securely."
 #~ msgstr "NVDA konnte nicht sicher gestartet werden."

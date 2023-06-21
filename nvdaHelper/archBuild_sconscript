@@ -87,8 +87,11 @@ env.Append(
 	CPPDEFINES=[
 		'UNICODE',
 		'_CRT_SECURE_NO_DEPRECATE',
-		('LOGLEVEL','${nvdaHelperLogLevel}'),
-		('_WIN32_WINNT','_WIN32_WINNT_WIN7')
+		('LOGLEVEL', '${nvdaHelperLogLevel}'),
+		('_WIN32_WINNT', '_WIN32_WINNT_WIN7'),
+		# NOMINMAX: prevent minwindef.h min/max macro definition, which unexpectedly override developer
+		# expectations
+		'NOMINMAX',
 	]
 )
 
@@ -197,6 +200,12 @@ mathPlayerRPCStubs=env.SConscript('mathPlayer_sconscript')
 if TARGET_ARCH=='x86':
 	env.Install(sourceTypelibDir,mathPlayerRPCStubs[0]) #typelib
 
+detoursLib = env.SConscript('detours/sconscript')
+Export('detoursLib')
+
+apiHookObj = env.Object("apiHook","common/apiHook.cpp")
+Export('apiHookObj')
+
 if TARGET_ARCH=='x86':
 	localLib=env.SConscript('local/sconscript')
 	Export('localLib')
@@ -220,9 +229,6 @@ Export('clientLib')
 if signExec:
 	env.AddPostAction(clientLib[0],[signExec])
 env.Install(clientInstallDir,clientLib)
-
-detoursLib = env.SConscript('detours/sconscript')
-Export('detoursLib')
 
 remoteLib=env.SConscript('remote/sconscript')
 Export('remoteLib')

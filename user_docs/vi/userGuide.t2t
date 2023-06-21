@@ -2,7 +2,9 @@
 
 
 %!includeconf: ../userGuide.t2tconf
+%!includeconf: ./locale.t2tconf
 %kc:title: Danh sách các phím tắt trong NVDA NVDA_VERSION 
+%kc:includeconf: ./locale.t2tconf
 
 = Mục lục=[toc]
 %%toc
@@ -40,6 +42,7 @@ Một số tính năng nổi bật bao gồm:
 - Hệ điều hành: tất cả các phiên bản 32bit và 64bit của Windows 7, Windows 8, Windows 8.1,  Windows 10, Windows 11 và các bản máy chủ từ bản Windows Server 2008 R2.
 - Đối với Windows 7, NVDA yêu cầu bản Service Pack 1 hoặc cao hơn.
 - Đối với Windows Server 2008 R2, NVDA yêu cầu bản Service Pack 1 hoặc cao hơn.
+  - đã hỗ trợ các biến thể AMD64 và ARM64 của Windows.
   -
 - Không gian lưu trữ tối thiểu là 150 MB
 -
@@ -94,6 +97,7 @@ NVDA hoạt động được với tất cả phiên bản gần đây của Mic
 Xem phần [Yêu cầu hệ thống #SystemRequirements] để biết thông tin chi tiết.
 
 +++ Các bước để tải về NVDA +++[StepsForDownloadingNVDA]
+
 Các bước này xem như người dùng đã có chút kĩ năng trong việc lướt web.
 
 - Mở trình duyệt của bạn (bấm phím ``Windows``, gõ từ "internet" không có dấu ngoặc kép, và bấm ``enter``)
@@ -220,6 +224,7 @@ Chức năng thật sự của thao tác sẽ không được thực thi khi ở
 | Đọc thanh trạng thái | ``NVDA+end`` | ``NVDA+shift+end`` | Đọc thông tin thanh trạng thái nếu NVDA tìm thấy. Bấm hai lần để đánh vần thông tin. Bấm ba lần để chép nó vào bộ nhớ tạm |
 | Đọc giờ | ``NVDA+f12`` | ``NVDA+f12`` | Bấm một lần để đọc giờ hiện tại, bấm hai lần để đọc ngày |
 | Thông báo định dạng văn bản | ``NVDA+f`` | ``NVDA+f`` | Thông báo định dạng văn bản. Bấm hai lần để hiển thị thông tin trên một cửa sổ |
+| Thông báo đường dẫn liên kết | ``NVDA+k`` | ``NVDA+k`` | Bấm một lần để đọc đường dẫn URL của liên kết tại dấu nháy hoặc vị trí con trỏ. Bấm hai lần sẽ hiển thị nó trên một cửa sổ để dễ xem lại hơn |
 
 +++ Bật / tắt các thông tin được NVDA đọc +++[ToggleWhichInformationNVDAReads]
 || Tên | Phím máy bàn | Phím máy xách tay | Mô tả |
@@ -332,6 +337,7 @@ Tùy chọn này chỉ có khi bạn tạo bản chạy trực tiếp từ bản
 Bấm nút "Tiếp tục" để tiến hành tạo bản NVDA chạy trực tiếp.
 Khi hoàn tất, sẽ có một thông báo xác nhận là việc tạo bản chạy trực tiếp đã thành công.
 Bấm Đồng ý để đóng hộp thoại này.
+
 
 ++ Hạn chế của phiên bản tạm thời và bản chạy trực tiếp ++[PortableAndTemporaryCopyRestrictions]
 
@@ -2086,6 +2092,28 @@ Tùy chọn này là hộp xổ với bốn lựa chọn.
 Mỗi âm sẽ tăng cao độ lên một chút và đại diện cho một khoảng trắng. Đối với khoảng cách là tab thì 1 tab sẽ bằng 4 khoảng trắng.
 - Cả âm thanh và đọc: lựa chọn này sẽ thông báo bằng cả hai cách nói trên.
 -
++++ Điều Hướng Tài Liệu +++[DocumentNavigation]
+Phân loại này cho phép bạn điều chỉnh nhiều cách khác nhau để điều hướng trong tài liệu.
+
+==== Kiểu Đoạn ====[ParagraphStyle]
+: Mặc định
+  Quản lý bởi ứng dụng
+: Tùy chọn
+  Mặc định (Quản lý bởi ứng dụng), Quản lý bởi ứng dụng, Một dấu xuống dòng, Nhiều dấu xuống dòng
+:
+
+Hộp xổ này cho phép bạn chọn cách dùng khi điều hướng đoạn với ``control+mũi tên lên`` và ``control+mũi tên xuống``.
+Hiện có các kiểu điều hướng đoạn sau:
+- Quản lý bởi ứng dụng: NVDA sẽ để cho ứng dụng xác định đoạn trước hoặc đoạn kế, và sẽ  đọc đoạn mới khi điều hướng đến nó.
+Kiểu này hoạt động tốt nhất khi ứng dụng có hỗ trợ điều hướng đoạn một cách tự nhiên, và đây là kiểu mặc định.
+- Một dấu xuống dòng: NVDA sẽ nỗ lực để xác định đoạn trước hay đoạn kế bằng một dấu xuống dòng.
+Kiểu này hoạt động tốt nhất khi đọc tài liệu trong một ứng dụng không hỗ trợ điều hướng đoạn, và các đoạn trong tài liệu được đánh dấu bằng một lần bấm phím ``enter``.
+- Nhiều dấu xuống dòng: NVDA sẽ nỗ lực để xác định đoạn trước hay đoạn kế bởi ít nhất một dòng trắng (bấm phím ``enter`` hai lần).
+Kiểu này hoạt động tốt khi làm việc với một tài liệu sử dụng các khối đoạn văn bản.
+Lưu ý là kiểu đoạn này không dùng được trong Microsoft Word hay Microsoft Outlook, trừ khi bạn đang dùng UIA để truy cập các điều khiển của Microsoft Word.
+-
+
+Bạn có thể chuyển qua lại giữa các kiểu đoạn được hỗ trợ ở bất cứ đâu bằng cách gán thao tác trong [Hộp thoại quản lý các thao tác #InputGestures].
 
 +++ Cài Đặt Windows OCR +++[Win10OcrSettings]
 Các thiết lập ở phân loại này cho phép bạn cấu hình [Windows OCR #Win10Ocr].
@@ -2093,6 +2121,7 @@ Phân loại này gồm các mục sau:
 
 ==== Ngôn Ngữ Nhận Dạng ====[Win10OcrSettingsRecognitionLanguage]
 Hộp xổ này cho phép chọn ngôn ngữ dùng để nhận dạng.
+Để  chuyển qua lại giữa các ngôn ngữ hiện có ở bất cứ đâu, vui lòng gán thao tác trong hộp thoại [Quản lý các thao tác #InputGestures].
 
 +++ Cài đặt nâng cao +++[AdvancedSettings]
 Cảnh báo! Các thiết lập trong phân loại này dành cho người dùng ở cấp độ nâng cao, có thể làm cho NVDA hoạt động không chính xác nếu bị cấu hình không đúng cách.
@@ -2108,10 +2137,10 @@ Cũng có thể dùng trong trường hợp mà bạn không chắc là các cà
 
 ==== Cho phép gọi mã nguồn từ thư mục Scratchpad ====[AdvancedSettingsEnableScratchpad]
 Khi phát triển các add-on cho NVDA, sẽ rất tiện lợi nếu có thể chạy thử mã nguồn trong khi đang viết ra nó.
-Việc bật tùy chọn này sẽ cho phép NVDA gọi các Module ứng dụng, Plugins toàn cục, chữ nổi và các trình điều khiển bộ đọc đã tùy chỉnh từ thư mục đặc biệt tên scratchpad trong thư mục cấu hình người dùng NVDA của bạn.
-Trước đây, NVDA gọi các mã nguồn đã tùy chỉnh trực tiếp từ thư mục cấu hình người dùng, và không có cách nào để vô hiệu.
-Mặc định, tùy chọn này bị tắt để đảm bảo rằng không có những đoạn mã chưa được kiểm nghiệm chạy trong NVDA mà người dùng không có thông tin rõ ràng.
-Nếu muốn chia sẻ mã nguồn cho người khác, bạn nên đóng gói nó thành một NVDA add-on.
+Tùy chọn này, khi được bật, sẽ cho phép NVDA gọi các Module ứng dụng, Plugins toàn cục, trình điều khiển cho màn hình chữ nổi và  bộ đọc cũng như các cung cấp cho hỗ trợ nhìn đã được tùy chỉnh từ thư mục đặc biệt tên scratchpad trong thư mục cấu hình người dùng NVDA của bạn.
+Tương đương với các  add-on, các module này được gọi chạy khi khởi động NVDA, như một module cho ứng dụng hay toàn cục, khi [cập nhật lại các plugin #ReloadPlugins].
+Mặc định, tùy chọn này bị tắt để đảm bảo rằng không có những đoạn mã chưa được kiểm nghiệm được gọi chạy trong NVDA mà người dùng không có thông tin rõ ràng.
+Nếu muốn chia sẻ mã nguồn cho người khác, bạn nên đóng gói nó thành một tập tin NVDA add-on.
 
 ==== Mở thư mục scratchpad ====[AdvancedSettingsOpenScratchpadDir]
 Nút này mở thư mục mà bạn có thể lưu mã nguồn trong khi đang phát triển nó.
@@ -2228,7 +2257,26 @@ Nó giống như cách hoạt động của NVDA phiên bản 2020.4 trở về 
 Thiết lập này có thể ổn định việc đọc các văn bản đến từ vài ứng dụng.
 Tuy nhiên, trong terminal, khi chèn hay xóa một kí tự ở giữa một dòng, văn bản sau con trỏ nháy sẽ bị đọc lên.
 -
-+
+
+==== Đọc văn bản mới trong Windows Terminal thông qua ====[WtStrategy]
+: Mặc định
+  Diffing
+: Các tùy chọn
+  Diffing, Các thông báo UIA
+:
+
+Tùy chọn này là để NVDA xác định những văn bản "mới" (và như vậy thì sẽ nói cái gì khi "thông báo thay đổi nội dung động" được bật) trong Windows Terminal và WPF các điều khiển Windows Terminal được dùng trong Visual Studio 2022.
+Nó không ảnh hưởng đến Windows Console (``conhost.exe``).
+Hộp xổ Đọc văn bản mới trong Windows Terminal có ba tùy chọn:
+- Mặc Định: tùy chọn này tương đương với "diffing", nhưng nó được dự đoán là sẽ thay đổi khi hỗ trợ cho các thông báo UIA được phát triển xa hơn.
+- Diffing: tùy chọn này dùng thuật toán diff đã được chọn để tính toán các thay đổi mỗi khi terminal cho ra văn bản mới.
+Đây được xem như cách mà NVDA hoạt động ở các phiên bản 2022.4 trở về trước.
+- Các thông báo UIA: tùy chọn này thiên về phản hồi của việc Windows Terminal tự xác định  sẽ nói nội dung văn bản nào, nghĩa là NVDA không còn xác định văn bản nào hiển thị trên màn hình là "mới".
+Điều này sẽ cải thiện rõ rệt hiệu  xuất vận hành và tính ổn định của Windows Terminal, nhưng tính năng này chưa hoàn thành.
+Cụ thể, các kí tự nhập vào mà không hiện trên màn hình như mật khẩu chẳng hạn, sẽ được đọc lên khi dùng tùy chọn này.
+Thêm nữa, việc liên tục xuất hiện vượt quá 1,000 kí tự có thể sẽ không được đọc một cách chính xác.
+-
+
 ==== Cố gắng không đọc các sự kiện lỗi thời của focus ====[CancelExpiredFocusSpeech]
 Bật tùy chọn này để không đọc các sự kiện đã lỗi thời của focus.
 Đặc biệt là khi di chuyển nhanh qua các thư trong Gmail với Chrome có thể làm cho NVDA đọc các thông tin đã lỗi thời.
@@ -2303,7 +2351,11 @@ Lưu ý, thiết lập trong hộp thoại này dựa vào thiết lập của t
 Bạn có thể lọc các kí hiệu bằng cách nhập kí hiệu hay một phần kí hiệu thay thế vào ô nhập liệu tên Lọc theo.
 .
 - Mục Thay thế cho phép bạn thay đổi nội dung sẽ được đọc tại vị trí của kí hiệu này.
-- Sử dụng mục Cấp độ, bạn có thể điều chỉnh cấp độ kí hiệu thấp nhất mà kí hiệu này phải được đọc.
+- Sử dụng mục Cấp độ, bạn có thể điều chỉnh cấp độ kí hiệu thấp nhất mà kí hiệu này phải được đọc (không, một vài, hầu hết hoặc tất cả).
+Bạn cũng có thể chọn cấp độ là kí tự. Trường hợp này, kí hiệu sẽ không được đọc lên, bất kể bạn dùng cấp độ đọc kí hiệu nào, trừ hai ngoại lệ sau:
+ - Khi điều hướng theo kí tự.
+ - Khi NVDA đang đánh vần một đoạn văn bản có kí hiệu đó.
+ -
 - Mục Gửi ký hiệu gốc đến bộ đọc quy định khi nào thì tự kí hiệu đó (tương ứng với sự thay thế của nó) sẽ được gửi đến bộ đọc.
 Điều này sẽ hữu ích khi ký hiệu có nhiệm vụ làm bộ đọc ngưng nghỉ hoặc thay đổi ngữ điệu.
 Ví dụ, bộ đọc sẽ ngưng khi gặp dấu phảy.
@@ -2682,6 +2734,7 @@ Các màn hình nổi sau đây có hỗ trợ chức năng tự nhận biết.
 - Các màn hình nổi Eurobraille Esys/Esytime/Iris
 - Các màn hình nổi của Nattiq nBraille
 - Seika Notetaker: MiniSeika (16, 24 ô), V6 và V6Pro (40 ô)
+- Các màn hình Tivomatic Caiku Albatross 46/80
 - Mọi màn hình nổi có hỗ trợ giao thức HID Braille tiêu chuẩn
 -
 
@@ -2891,6 +2944,15 @@ Vui lòng xem tài liệu hướng dẫn của màn hình nổi để biết cá
 | Chuyển về dòng trước | d1 |
 | Chuyển đến dòng kế | d3 |
 | Rút về ô chữ nổi | routing |
+| phím shift+tab | khoảng trắng+chấm 1+chấm 3 |
+| phím tab | khoảng trắng+chấm 4+chấm 6 |
+| phím alt | khoảng trắng+chấm 1+chấm 3+chấm 4 (khoảng trắng+m) |
+| phím escape | khoảng trắng+chấm 1+chấm 5 (khoảng trắng+e) |
+| Phím windows | khoảng trắng+chấm 3+chấm 4 |
+| phím alt+tab | khoảng trắng+chấm 2+chấm 3+chấm 4+chấm 5 (khoảng trắng+t) |
+| Trình Đơn NVDA | khoảng trắng+chấm 1+chấm 3+chấm 4+chấm 5 (khoảng trắng+n) |
+| phím windows+d (thu nhỏ tất cả các ứng dụng) | khoảng trắng+chấm 1+chấm 4+chấm 5 (khoảng trắng+d) |
+| Đọc tất cả | khoảng trắng+chấm 1+chấm 2+chấm 3+chấm 4+chấm 5+chấm 6 |
 
 Dành cho các màn hình có cần điều khiển:
 || Tên | Phím |
@@ -3564,6 +3626,67 @@ Vui lòng xem [Danh sách phím kết hợp của BRLTTY http://mielke.cc/brltty
 | Rút về ô chữ nổi | route (đưa con trỏ về ký tự hiện tại) |
 %kc:endInclude
 
+++ Tivomatic Caiku Albatross 46/80 ++[Albatross]
+Các thiết bị của Caiku Albatross được sản xuất bởi Tivomatic và có mặt ở phần lan, có thể được kết nối bằng USB hoặc serial.
+bạn không cần cài thêm bất cứ trình điều khiển nào để dùng các màn hình này.
+Chỉ cần cắm màn hình vào và cấu hình NVDA để sử dụng.
+
+Lưu ý: tốc độ truyền 19200 được khuyến khích mạnh mẽ.
+Nếu được yêu cầu, hãy chuyển giá trị của thiết lập tốc độ truyền là 19200 từ trình đơn của màn hình nổi.
+Dù rằng trình điều khiển có hỗ trợ tốc độ truyền 9600 , nhưng nó không có cách để điều khiển tốc độ nào mà màn hình sử dụng.
+Vì 19200 là tốc độ truyền mặc định của màn hình nên trình điều khiển sẽ thử dùng nó trước tiên.
+Nếu tốc độ truyền không giống nhau, trình điều khiển có thể không hoạt động như mong muốn.
+
+Sau đây là các phím được gán cho những màn hình này với NVDA.
+Vui lòng xem tài liệu hướng dẫn của màn hình nổi để biết các phím tương ứng.
+%kc:beginInclude
+|| Tên | Phím |
+| Chuyển về dòng đầu trong chế độ duyệt tài liệu | ``home1``, ``home2`` |
+| Chuyển về dòng cuối trong chế độ duyệt tài liệu | ``end1``, ``end2`` |
+| Đưa đối tượng điều hướng đến tiêu điểm hiện tại | ``eCursor1``, ``eCursor2`` |
+| Chuyển đến tiêu điểm hiện tại | ``cursor1``, ``cursor2`` |
+| Di chuyển chuột đến đối tượng điều hướng hiện tại | ``home1+home2`` |
+| Đưa đối tượng điều hướng đến đối tượng hiện có dưới vị trí chuột và đọc nó lên | ``end1+end2`` |
+| Đưa tiêu điểm đến đối tượng điều hướng hiện tại | ``eCursor1+eCursor2`` |
+| Bật / tắt con trỏ nổi đi theo | ``cursor1+cursor2`` |
+| Chuyển màn hình nổi về dòng trước | ``up1``, ``up2``, ``up3`` |
+| Chuyển màn hình nổi về dòng kế | ``down1``, ``down2``, ``down3`` |
+| Cuộn màn hình nổi về trước | ``left``, ``lWheelLeft``, ``rWheelLeft`` |
+| Cuộn màn hình nổi về sau | ``right``, ``lWheelRight``, ``rWheelRight`` |
+| Đưa đến ô chữ nổi | ``routing`` |
+| Thông báo định dạng văn bản dưới ô chữ nổi | ``secondary routing`` |
+| Bật / tắt thông tin ngữ cảnh được trình bày trong chữ nổi | ``attribute1+attribute3`` |
+| Chuyển giữa các chế độ nói: tắt, beep và nói | ``attribute2+attribute4`` |
+| Chuyển đến chế độ duyệt tài liệu trước (duyệt theo đối tượng, duyệt tài liệu hay duyệt màn hình) | ``f1`` |
+| Chuyển đến chế độ duyệt tài liệu kế (duyệt theo đối tượng, duyệt tài liệu hay duyệt màn hình | ``f2`` |
+| Chuyển đối tượng điều hướng đến đối tượng chứa nó | ``f3`` |
+| Chuyển đối tượng điều hướng đến đối tượng đầu tiên bên trong nó | ``f4`` |
+| Chuyển đối tượng điều hướng đến đối tượng trước | ``f5`` |
+| Chuyển đối tượng điều hướng đến đối tượng kế | ``f6`` |
+| Thông báo đối tượng điều hướng hiện tại | ``f7`` |
+| Báo thông tin về vị trí của văn bản hay đối tượng tại con trỏ duyệt | ``f8`` |
+| Hiện cài đặt chữ nổi | ``f1+home1``, ``f9+home2`` |
+| Đọc thanh trạng thái và chuyển đối tượng điều hướng vào trong nó | ``f1+end1``, ``f9+end2`` |
+| Chuyển đổi giữa các hình dạng con trỏ nổi | ``f1+eCursor1``, ``f9+eCursor2`` |
+| Bật / tắt con trỏ nổi | ``f1+cursor1``, ``f9+cursor2`` |
+| Thực hiện hành động mặc định trên đối tượng điều hướng hiện tại | ``f7+f8`` |
+| Thông báo ngày / giờ | ``f9`` |
+| Thông báo trạng thái pin và thời gian còn lại nếu không cắm nguồn | ``f10`` |
+| Thông báo tiêu đề | ``f11`` |
+| Thông báo thanh trạng thái | ``f12`` |
+| Thông báo dòng hiện tại dưới con trỏ của ứng dụng | ``f13`` |
+| Đọc tất cả | ``f14`` |
+| Thông báo kí tự hiện tại dưới con trỏ duyệt | ``f15`` |
+| Thông báo dòng ở đối tượng điều hướng hiện tại của con trỏ duyệt | ``f16`` |
+| Đọc từ của đối tượng điều hướng hiện tại ở vị trí con trỏ duyệt | ``f15+f16`` |
+| Chuyển con trỏ duyệt đến dòng trước của đối tượng điều hướng hiện tại và đọc nó lên | ``lWheelUp``, ``rWheelUp`` |
+| Chuyển con trỏ duyệt đến dòng kế của đối tượng điều hướng hiện tại và đọc nó lên | ``lWheelDown``, ``rWheelDown`` |
+| Phím ``Windows+d`` (thu nhỏ tất cả các ứng dụng) | ``attribute1`` |
+| Phím ``Windows+e`` (this computer) | ``attribute2`` |
+| Phím ``Windows+b`` (đi đến khay hệ thống) | ``attribute3`` |
+| Phím ``Windows+i`` (Windows settings) | ``attribute4`` |
+%kc:endInclude
++ 
 ++ Các màn hình nổi tiêu chuẩn ++[HIDBraille]
 Đây là một trình điều khiển thử nghiệm cho chuẩn kết nối (HID) màn hình chữ nổi mới, được cho phép vào năm 2018 bởi Microsoft, Google, Apple và vài công ty về công nghệ trợ giúp bao gồm NV Access.
 Niềm hi vọng là tất cả các mẫu màn hình nổi trong tương lai tạo bởi bất kì nhà sản xuất nào, đều dùng giao thức tiêu chuẩn này, sẽ gỡ bỏ các trình điều khiển nhất định của nhà sản xuất.
@@ -3575,19 +3698,17 @@ Sau đây là các phím hiện được gán cho những màn hình nổi nói 
 || Tên | Phím |
 | Cuộn màn hình nổi về trước | pan left hoặc rocker up |
 | Cuộn màn hình nổi về sau | pan right hoặc rocker down |
-| Di chuyển màn hình về dòng trước | khoảng trắng + chấm 1 |
-| Di chuyển màn hình về dòng trước | khoảng trắng + chấm 4 |
 | Đưa về ô chữ nổi | routing set 1|
 | Bật / tắt chữ nổi đi theo | lên+xuống |
-| phím mũi tên lên | joystick up |
-| phím mũi tên xuống | joystick down |
-| phím mũi tên trái | khoảng trắng+chấm 3 hoặc joystick left |
-| phím mũi tên phải | khoảng trắng+chấm 6 hoặc joystick right |
+| phím mũi tên lên | joystick up, dpad up or space+dot1 |
+| phím mũi tên xuống | joystick down, dpad down or space+dot4 |
+| phím mũi tên trái | space+dot3, joystick left  or dpad left |
+| phím mũi tên phải | space+dot6, joystick right or dpad right |
 | phím shift+tab | khoảng trắng+chấm 1+chấm 3 |
 | phím tab | khoảng trắng+chấm 4+chấm 6 |
 | phím alt | khoảng trắng+chấm 1+chấm 3+chấm 4 (khoảng trắng+m) |
 | phím escape | khoảng trắng+chấm 1+chấm 5 (khoảng trắng+e) |
-| phím enter | chấm 8 hoặc joystick center |
+| phím enter | dot8, joystick center or dpad center |
 | phím windows | khoảng trắng+chấm 3+chấm 4 |
 | phím alt+tab | khoảng trắng+chấm 2+chấm 3+chấm 4+chấm 5 (khoảng trắng+t) |
 | Trình đơn NVDA | khoảng trắng+chấm 1+chấm 3+chấm 4+chấm 5 (khoảng trắng+n) |
@@ -3654,7 +3775,7 @@ Sau đây là các tùy chọn dòng lệnh cho NVDA:
 | -q | --quit | Đóng bản NVDA đang chạy |
  | -k | --check-running | Thông báo NVDA đang chạy hay không chạy thông qua mã exit; 0 nếu đang chạy và 1 nếu không chạy |
 | -f LOGFILENAME | --log-file=LOGFILENAME | Tập tin để ghi các thông điệp log vào |
-| -l LOGLEVEL | --log-level=LOGLEVEL | Cấp độ thấp nhất của thông điệp log (dò lỗi 10, đầu vào / đầu ra 12, cảnh báo gỡ lỗi 15, thông tin 20, cảnh báo 30, lỗi 40, nghiêm trọng 50, tắt 100), mặc định là cảnh báo |
+| -l LOGLEVEL | --log-level=LOGLEVEL | Cấp độ thấp nhất của thông điệp log (dò lỗi 10, đầu vào / đầu ra 12, cảnh báo gỡ lỗi 15, thông tin 20, vô hiệu 100) |
 | -c CONFIGPATH | --config-path=CONFIGPATH | Đường dẫn để lưu tất cả cấu hình của NVDA |
 | Không có | --lang=LANGUAGE | Bỏ qua ngôn ngữ đã cấu hình của NVDA. Thiết lập là "Windows" cho ngôn ngữ mặc định của người dùng hiện tại, "en" là tiếng Anh, v...v.... |
 | -m | --minimal | Không âm thanh, không giao diện, không thông báo bắt đầu, v...v... |
