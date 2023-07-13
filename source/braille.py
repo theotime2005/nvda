@@ -2362,7 +2362,7 @@ class BrailleHandler(baseObject.AutoPropertyObject):
 			return None
 		return self.buffer.getTextInfoForWindowPos(windowPos)
 
-	def message(self, text):
+	def message(self, text: str):
 		"""Display a message to the user which times out after a configured interval.
 		The timeout will be reset if the user scrolls the display.
 		The message will be dismissed immediately if the user presses a cursor routing key.
@@ -2816,7 +2816,8 @@ class BrailleDisplayDriver(driverHandler.Driver):
 		super().terminate()
 		# Clear the display.
 		try:
-			self.display([0] * self.numCells)
+			handler.buffer.clear()
+			handler.update()
 		except Exception:
 			# The display driver seems to be failing, but we're terminating anyway, so just ignore it.
 			log.error(f"Display driver {self} failed to display while terminating.", exc_info=True)
