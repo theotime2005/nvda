@@ -6,13 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: r2560\n"
 "POT-Creation-Date: 2007-03-10 23:05+0200\n"
-"PO-Revision-Date: 2008-12-08 15:00+0200\n"
+"PO-Revision-Date: 2023-10-28 22:43+0200\n"
 "Last-Translator: Michel Such <michel.such@free.fr>\n"
 "Language-Team: fra <LL@li.org>\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: pygettext.py 1.5\n"
+"X-Generator: Poedit 3.4\n"
 
 #: NVDAObjects\IAccessible\edit.py:528
 msgid "unknown"
@@ -151,7 +153,7 @@ msgstr "clic gauche"
 
 #: appModules\_default.py:83
 msgid "Clicks the left mouse button once at the current mouse position"
-msgstr "simple click gauche de la souris à sa position courante"
+msgstr "Simple click gauche de la souris à sa position courante"
 
 #: appModules\_default.py:86
 msgid "right click"
@@ -159,11 +161,11 @@ msgstr "clic droit"
 
 #: appModules\_default.py:89
 msgid "Clicks the right mouse button once at the current mouse position"
-msgstr "simple click droit de la souris à sa position courante"
+msgstr "Simple click droit de la souris à sa position courante"
 
 #: appModules\_default.py:98 cursorManager.py:220
 msgid "no selection"
-msgstr "Aucune sélection"
+msgstr "aucune sélection"
 
 #: appModules\_default.py:100 speech.py:256 speech.py:347 speech.py:360
 #: textBuffer.py:537 textBuffer.py:541 textBuffer.py:543 textBuffer.py:549
@@ -189,12 +191,11 @@ msgstr ""
 #: appModules\_default.py:113
 msgid "Increases the currently active setting in the synth settings ring"
 msgstr ""
-"augmente le paramètre courant dans la liste des paramètres synthétiseur"
+"Augmente le paramètre courant dans la liste des paramètres synthétiseur"
 
 #: appModules\_default.py:117
 msgid "Decreases the currently active setting in the synth settings ring"
-msgstr ""
-"diminue le paramètre courant dans la liste des paramètres synthétiseur"
+msgstr "Diminue le paramètre courant dans la liste des paramètres synthétiseur"
 
 #: appModules\_default.py:121
 msgid "Moves to the next available setting in the synth settings ring"
@@ -202,8 +203,7 @@ msgstr "Va au paramètre suivant dans la liste des paramètres synthétiseur"
 
 #: appModules\_default.py:125
 msgid "Moves to the previous available setting in the synth settings ring"
-msgstr ""
-"Va au paramètre précédent dans la liste des paramètres synthétiseur"
+msgstr "Va au paramètre précédent dans la liste des paramètres synthétiseur"
 
 #: appModules\_default.py:134
 msgid "speak typed characters"
@@ -248,7 +248,7 @@ msgstr "Déplace la souris vers l'objet de navigation"
 
 #: appModules\_default.py:180
 msgid "object has no location"
-msgstr "L'objet n'a pas de position"
+msgstr "l’objet n'a pas de position"
 
 #: appModules\_default.py:183
 msgid "Moves the mouse pointer to the current navigator object"
@@ -284,12 +284,12 @@ msgid ""
 "Reports the current navigator object or, if pressed three times, Copies name "
 "and value of current navigator object to the clipboard"
 msgstr ""
-"annnonce l'objet de navigation courant ou, si pressé 3 fois, copie le nom "
-"et le contenu de l'objet de navigation courant dans le presse-papier"
+"Annnonce l'objet de navigation courant ou, si pressé 3 fois, copie le nom et "
+"le contenu de l'objet de navigation courant dans le presse-papier"
 
 #: appModules\_default.py:229
 msgid "No location information for navigator object"
-msgstr "pas d'information de position pour l'objet de navigation"
+msgstr "Pas d'information de position pour l'objet de navigation"
 
 #: appModules\_default.py:232
 msgid ""
@@ -297,9 +297,9 @@ msgid ""
 "cent down from top of screen, %.1f per cent left from right of screen, %.1f "
 "up from bottom of screen"
 msgstr ""
-"Limites de l'objet positionnées %.1f pour cent de la gauche de l'écran, %."
-"1f pour cent du haut de l'écran, %.1f pour cent de la droite de l'écran, %."
-"1f pour cent du bas de l'écran"
+"Limites de l'objet positionnées %.1f pour cent de la gauche de l'écran, %.1f "
+"pour cent du haut de l'écran, %.1f pour cent de la droite de l'écran, %.1f "
+"pour cent du bas de l'écran"
 
 #: appModules\_default.py:233
 msgid "Reports the hight, width and position of the current navigator object"
@@ -320,7 +320,7 @@ msgstr "Déplace l'objet de navigation au focus courant"
 
 #: appModules\_default.py:254
 msgid "No parents"
-msgstr "pas d'objet  parent"
+msgstr "Pas d'objet  parent"
 
 #: appModules\_default.py:255
 msgid ""
@@ -332,31 +332,31 @@ msgstr ""
 
 #: appModules\_default.py:267
 msgid "No next"
-msgstr "pas d'objet suivant"
+msgstr "Pas d'objet suivant"
 
 #: appModules\_default.py:268
 msgid ""
 "Sets the navigator object to the object next to the one it is currently on "
 "and speaks it"
 msgstr ""
-"Déplace l'objet de navigation vers l'objet suivant de celui sur lequel il "
-"se trouve et le lit"
+"Déplace l'objet de navigation vers l'objet suivant de celui sur lequel il se "
+"trouve et le lit"
 
 #: appModules\_default.py:280
 msgid "No previous"
-msgstr "pas d'objet précédent"
+msgstr "Pas d'objet précédent"
 
 #: appModules\_default.py:281
 msgid ""
 "Sets the navigator object to the object previous to the one it is currently "
 "on and speaks it"
 msgstr ""
-"Déplace l'objet de navigation vers l'objet précédent de celui sur lequel "
-"il se trouve et le lit"
+"Déplace l'objet de navigation vers l'objet précédent de celui sur lequel il "
+"se trouve et le lit"
 
 #: appModules\_default.py:293
 msgid "No children"
-msgstr "pas d'objet enfant"
+msgstr "Pas d'objet enfant"
 
 #: appModules\_default.py:294
 msgid ""
@@ -374,27 +374,26 @@ msgstr "fin d'arborescence"
 msgid ""
 "Sets the navigator object to the object this object flows to and speaks it"
 msgstr ""
-"Déplace l'objet de navigation à l'objet suivant dans l'arborescence et le "
-"lit"
+"Déplace l'objet de navigation à l'objet suivant dans l'arborescence et le lit"
 
 #: appModules\_default.py:339
 msgid "Beginning of flow"
-msgstr "début d'arborescence"
+msgstr "Début d'arborescence"
 
 #: appModules\_default.py:340
 msgid ""
 "Sets the navigator object to the object this object flows from and speaks it"
 msgstr ""
-"Déplace l'objet de navigation à  l'objet précédent dans l'arborescence "
-"et le lit"
+"Déplace l'objet de navigation à  l'objet précédent dans l'arborescence et le "
+"lit"
 
 #: appModules\_default.py:348
 msgid ""
 "Performs the default action on the current navigator object (example: "
 "presses it if it is a button)."
 msgstr ""
-"Exécute l'action par défaut sur l'objet de navigation courant. Par "
-"exemple: appuie s'il s'agit d'un bouton"
+"Exécute l'action par défaut sur l'objet de navigation courant. Par exemple: "
+"appuie s'il s'agit d'un bouton."
 
 #: appModules\_default.py:359
 msgid "inside"
@@ -419,7 +418,7 @@ msgid ""
 "Moves the review cursor to the top line of the current navigator object and "
 "speaks it"
 msgstr ""
-"déplace le pointeur de revue d'écran en haut de l'objet de navigation "
+"Déplace le pointeur de revue d'écran en haut de l'objet de navigation "
 "courant et le lit"
 
 #: appModules\_default.py:382
@@ -427,15 +426,15 @@ msgid ""
 "Moves the review cursor to the previous line of the current navigator object "
 "and speaks it"
 msgstr ""
-"Déplace le pointeur de revue d'écran sur la ligne précédente de l'objet "
-"de navigation courant et la lit"
+"Déplace le pointeur de revue d'écran sur la ligne précédente de l'objet de "
+"navigation courant et la lit"
 
 #: appModules\_default.py:391
 msgid ""
 "Reports the line of the current navigator object where the review cursor is "
 "situated. If this key is pressed twice, the current line will be spelled"
 msgstr ""
-"annonce la ligne de l'objet de navigation courant sur laquelle se trouve le "
+"Annonce la ligne de l'objet de navigation courant sur laquelle se trouve le "
 "pointeur de revue d'écran. Si cette touche est pressée deux fois, la ligne "
 "est épelée"
 
@@ -458,7 +457,7 @@ msgid ""
 "Moves the review cursor to the bottom line of the current navigator object "
 "and speaks it"
 msgstr ""
-"déplace le pointeur de revue d'écran à la dernière ligne de l'objet de "
+"Déplace le pointeur de revue d'écran à la dernière ligne de l'objet de "
 "navigation courant et la lit"
 
 #: appModules\_default.py:423
@@ -466,7 +465,7 @@ msgid ""
 "Moves the review cursor to the previous word of the current navigator object "
 "and speaks it"
 msgstr ""
-"déplace le pointeur de revue d'écran vers le mot précédent de l'objet de "
+"Déplace le pointeur de revue d'écran vers le mot précédent de l'objet de "
 "navigation courant et le lit"
 
 #: appModules\_default.py:432
@@ -482,7 +481,7 @@ msgid ""
 "Moves the review cursor to the next word of the current navigator object and "
 "speaks it"
 msgstr ""
-"déplace le pointeur de revue d'écran vers le mot suivant de l'objet de "
+"Déplace le pointeur de revue d'écran vers le mot suivant de l'objet de "
 "navigation courant et le lit"
 
 #: appModules\_default.py:452 appModules\_default.py:464
@@ -503,8 +502,8 @@ msgid ""
 "Moves the review cursor to the previous character of the current navigator "
 "object and speaks it"
 msgstr ""
-"déplace le pointeur de revue d'écran vers le caractère précédent de "
-"l'objet de navigation courant et le lit"
+"Déplace le pointeur de revue d'écran vers le caractère précédent de l'objet "
+"de navigation courant et le lit"
 
 #: appModules\_default.py:486
 msgid ""
@@ -526,8 +525,8 @@ msgid ""
 "Moves the review cursor to the next character of the current navigator "
 "object and speaks it"
 msgstr ""
-"Déplace le pointeur de revue d'écran vers le caractère suivant de l'objet "
-"de navigation courant et le lit"
+"Déplace le pointeur de revue d'écran vers le caractère suivant de l'objet de "
+"navigation courant et le lit"
 
 #: appModules\_default.py:515
 msgid ""
@@ -539,23 +538,23 @@ msgstr ""
 
 #: appModules\_default.py:521
 msgid "No caret"
-msgstr "pas de curseur"
+msgstr "Pas de curseur"
 
 #: appModules\_default.py:526
 msgid ""
 "Moves the review cursor to the position of the system caret, in the current "
 "navigator object"
 msgstr ""
-"Déplace le pointeur de revue d'écran vers le curseur système dans l'objet "
-"de navigation courant"
+"Déplace le pointeur de revue d'écran vers le curseur système dans l'objet de "
+"navigation courant"
 
 #: appModules\_default.py:533
 msgid ""
 "Moves the system caret to the position of the review cursor , in the current "
 "navigator object"
 msgstr ""
-"Déplace le curseur système vers le pointeur de revue d'écran dans l'objet "
-"de navigation courant"
+"Déplace le curseur système vers le pointeur de revue d'écran dans l'objet de "
+"navigation courant"
 
 #: appModules\_default.py:542
 msgid "beeps"
@@ -577,7 +576,7 @@ msgid ""
 msgstr ""
 "Bascule entre les modes muet, bip et parole.Mode muet: Nvda ne dit rien.Mode "
 "bip: Nvda émet des bips au lieu de parler. Mode parole: Nvda parle "
-"normalement"
+"normalement."
 
 #: appModules\_default.py:556
 msgid ""
@@ -708,8 +707,8 @@ msgid ""
 "it is possible to have current value spoken each 10 percent or it is "
 "possible to completely disable this reporting."
 msgstr ""
-"Bascule de l'annonce de mise à jour des barres de progression.NVDA peut é"
-"mettre des bips pour toutes les barres de progressionou seulement pour "
+"Bascule de l'annonce de mise à jour des barres de progression.NVDA peut "
+"émettre des bips pour toutes les barres de progressionou seulement pour "
 "celles qui sont en avant plan.De plus, il est possible d'annoncer la "
 "progression tous les 10% ou de complètement désactiver cette annonce."
 
@@ -776,8 +775,8 @@ msgid ""
 "The next key that is pressed will not be handled at all by NVDA, it will be "
 "passed directly through to Windows."
 msgstr ""
-"La touche suivante ne sera pas traitée par NVDA,elle sera passée "
-"directement à Windows"
+"La touche suivante ne sera pas traitée par NVDA,elle sera passée directement "
+"à Windows"
 
 #: appModules\_default.py:770
 msgid "Currently running application is %s"
@@ -840,8 +839,7 @@ msgstr ""
 #: appModules\_default.py:823
 msgid "Activates the NVDA Python Console, primarily useful for development"
 msgstr ""
-"Active la console Python de NVDA, essentiellement utile pour les "
-"développeurs"
+"Active la console Python de NVDA, essentiellement utile pour les développeurs"
 
 #: appModules\_default.py:828
 msgid "review"
@@ -867,8 +865,7 @@ msgstr "il n'y a pas de texte dans le presse-papier"
 #: appModules\_default.py:846
 msgid ""
 "The clipboard contains a large portion of text. It is %s characters long"
-msgstr ""
-"Le presse-papier contient une grande quantité de texte: %s caractères."
+msgstr "Le presse-papier contient une grande quantité de texte: %s caractères."
 
 #: appModules\_default.py:847
 msgid "Reports the text on the Windows clipboard"
@@ -883,8 +880,8 @@ msgid ""
 "Marks the current position of the review cursor as the start of text to be "
 "copied"
 msgstr ""
-"marque la position actuelle du curseur de revue d'écran comme début du "
-"texte à copier"
+"marque la position actuelle du curseur de revue d'écran comme début du texte "
+"à copier"
 
 #: appModules\_default.py:856
 msgid "No start marker set"
@@ -907,9 +904,9 @@ msgid ""
 "Retrieves the text from the previously set start marker to the current "
 "position of the review cursor and copies it to the clipboard"
 msgstr ""
-"Prend le texte depuis la position de départ marquée précédemment "
-"jusqu'à la position actuelle du curseur de revue d'écran et le copie dans "
-"le presse-papier."
+"Prend le texte depuis la position de départ marquée précédemment jusqu'à la "
+"position actuelle du curseur de revue d'écran et le copie dans le presse-"
+"papier."
 
 #: appModules\explorer.py:16
 msgid "Start"
@@ -2025,8 +2022,8 @@ msgid ""
 "find the previous occurrence of the previously entered text string from the "
 "current cursor's position"
 msgstr ""
-"trouver l'occurrence précédente du texte recherché à partir de la "
-"position courante du curseur"
+"trouver l'occurrence précédente du texte recherché à partir de la position "
+"courante du curseur"
 
 #: gui\__init__.py:146
 msgid "configuration applied"
@@ -2281,8 +2278,8 @@ msgstr ""
 "Bienvenue dans NVDA!\n"
 "La plupart des commandes de NVDA nécessitent de maintenir la touche NVDA "
 "enfoncée, en pressant d'autres touches.\n"
-"Par défaut, les touches insertion du pavé numérique et du clavier "
-"principal peuvent être utilisées comme touche NVDA.\n"
+"Par défaut, les touches insertion du pavé numérique et du clavier principal "
+"peuvent être utilisées comme touche NVDA.\n"
 "Vous pouvez aussi configurer  la touche de verrouillage majuscule comme "
 "touche NVDA.\n"
 "Appuyez sur NVDA+n à tout moment pour activer le menu NVDA.\n"
@@ -3275,12 +3272,11 @@ msgstr ""
 "Vous êtes libre de partager ou modifier ce logiciel à votre guise tant que "
 "vous distribuez la license avec le logiciel et laissez l'ensemble du code "
 "source disponible à qui le veut. Ceci s'applique aux versions originales et "
-"modifiées du logiciel, ainsi qu'à tout logiciel utilisant du code tiré de "
-"ce logiciel.\n"
-"Pour plus de détail, vous pouvez consulter la license en ligne à "
-"l'adresse:\n"
+"modifiées du logiciel, ainsi qu'à tout logiciel utilisant du code tiré de ce "
+"logiciel.\n"
+"Pour plus de détail, vous pouvez consulter la license en ligne à l'adresse:\n"
 "http://www.gnu.org/licenses/gpl.html\n"
-"ou consulter le fichier copying.txt inclus dans ce logiciel.\n"
+"ou consulter le fichier copying.txt inclus dans ce logiciel."
 
 #: virtualBufferHandler.py:93
 msgid "browse mode"
